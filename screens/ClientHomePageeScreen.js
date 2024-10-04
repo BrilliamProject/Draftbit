@@ -359,26 +359,7 @@ const ClientHomePageeScreen = props => {
               console.error(err);
             }
           }}
-        >
-          <Circle
-            bgColor={palettes.App.Community_Modal_Opacity_Overlay}
-            size={31}
-            style={StyleSheet.applyWidth(
-              {
-                backgroundColor: palettes.Brand['Light 2'],
-                bottom: 25,
-                right: 10,
-              },
-              dimensions.width
-            )}
-          >
-            <Icon
-              color={palettes.Brand.Community_Primary_Alt}
-              name={'Ionicons/caret-back'}
-              size={18}
-            />
-          </Circle>
-        </Touchable>
+        ></Touchable>
         {/* Left Section */}
         <View
           style={StyleSheet.applyWidth(

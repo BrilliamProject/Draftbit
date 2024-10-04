@@ -104,7 +104,7 @@ const App = () => {
           <ThemeProvider
             themes={[Draftbit]}
             breakpoints={{}}
-            initialThemeName={Draftbit.name}
+            initialThemeName={'Draftbit'}
           >
             {!isOnline ? (
               <View

@@ -21,7 +21,15 @@ const linking = {
   enabled: Platform.OS === 'web' ? false : true,
   prefixes: [prefix],
   config: {
-    screens: {},
+    screens: {
+      AccountEditedScreen: {
+        screens: {
+          AccountEditedScreen: {
+            path: 'AccountEditedScreen',
+          },
+        },
+      },
+    },
   },
 };
 

@@ -297,32 +297,27 @@ const ClientHomePageTestingScreen = props => {
     return filteredData;
   };
 
-  const priceFilter = (Variables, setGlobalVariableValue, data) => {
-    const filterByPriceRange = (items, minPrice, maxPrice) => {
-      return items.filter(
-        item => item.price >= minPrice && item.price <= maxPrice
-      );
-    };
-
-    // Sample usage
-    const items = [
-      { id: 1, rate: 'rate', rate: 10 },
-      { id: 2, rate: 'rate', rate: 25 },
-      { id: 3, rate: 'rate', rate: 50 },
-    ];
-
-    const filteredItems = filterByPriceRange(items, 10, 50);
-
-    console.log(filteredItems);
+  const transformCountry = data => {
+    //(data) => {
+    //return data.map(country => ({
+    //label: country.name,
+    //value: country.id
+    //}));
+    //}
   };
 
-  const transformCountry = data => {
-    data => {
-      return data.map(country => ({
-        label: country.name,
-        value: country.id,
-      }));
-    };
+  const priceFilter = (Variables, setGlobalVariableValue, data) => {
+    //const filterByPriceRange = (items, minPrice, maxPrice) => {
+    //return items.filter(item => item.price >= minPrice && item.price <= maxPrice);
+    //};
+    // Sample usage
+    //const items = [
+    //{ id: 1, rate: 'rate', rate: 10 },
+    //{ id: 2, rate: 'rate', rate: 25 },
+    //{ id: 3, rate: 'rate', rate: 50 }
+    //];
+    //const filteredItems = filterByPriceRange(items, 10, 50);
+    //console.log(filteredItems);
   };
 
   return (

@@ -3350,7 +3350,12 @@ const ClientToProfessionalPageOrg2Screen = props => {
                                                     {
                                                       minWidth:
                                                         Breakpoints.Tablet,
-                                                      value: '50%',
+                                                      value: '15%',
+                                                    },
+                                                    {
+                                                      minWidth:
+                                                        Breakpoints.Laptop,
+                                                      value: '20%',
                                                     },
                                                   ],
                                                 },
@@ -3361,7 +3366,9 @@ const ClientToProfessionalPageOrg2Screen = props => {
                                               <Text
                                                 accessible={true}
                                                 selectable={false}
-                                                ellipsizeMode={'head'}
+                                                disabled={false}
+                                                ellipsizeMode={'middle'}
+                                                numberOfLines={5}
                                                 style={StyleSheet.applyWidth(
                                                   {
                                                     alignSelf: {
@@ -3437,6 +3444,8 @@ const ClientToProfessionalPageOrg2Screen = props => {
                                                     <Text
                                                       accessible={true}
                                                       selectable={false}
+                                                      ellipsizeMode={'tail'}
+                                                      numberOfLines={3}
                                                       style={StyleSheet.applyWidth(
                                                         {
                                                           color:
@@ -3449,7 +3458,7 @@ const ClientToProfessionalPageOrg2Screen = props => {
                                                         dimensions.width
                                                       )}
                                                     >
-                                                      {null}
+                                                      {listData?.profession}
                                                     </Text>
                                                   </View>
                                                 </Touchable>
