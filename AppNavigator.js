@@ -11,7 +11,6 @@ import LinkingConfiguration from './LinkingConfiguration';
 import AccountEditScreen from './screens/AccountEditScreen';
 import AccountEditedScreen from './screens/AccountEditedScreen';
 import AvailabilityScreen from './screens/AvailabilityScreen';
-import Blank2Screen from './screens/Blank2Screen';
 import ClientHomePageTestingScreen from './screens/ClientHomePageTestingScreen';
 import ClientHomePageeScreen from './screens/ClientHomePageeScreen';
 import ClientSignInScreen from './screens/ClientSignInScreen';
@@ -184,13 +183,6 @@ export default function RootAppNavigator() {
           options={({ navigation }) => ({
             headerShown: false,
             title: 'Video Call',
-          })}
-        />
-        <Stack.Screen
-          name="Blank2Screen"
-          component={Blank2Screen}
-          options={({ navigation }) => ({
-            title: 'Blank 2',
           })}
         />
         <Stack.Screen

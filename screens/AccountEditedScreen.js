@@ -994,22 +994,6 @@ const AccountEditedScreen = props => {
                 dimensions.width
               )}
             />
-            {/* Track_Address */}
-            <Text
-              accessible={true}
-              selectable={false}
-              {...GlobalStyles.TextStyles(theme)['Text 2'].props}
-              style={StyleSheet.applyWidth(
-                StyleSheet.compose(
-                  GlobalStyles.TextStyles(theme)['Text 2'].style,
-                  { fontSize: 20 }
-                ),
-                dimensions.width
-              )}
-            >
-              {'Update Change'}
-              {'\n'}
-            </Text>
           </View>
           <Spacer bottom={18} left={18} right={18} top={18} />
         </View>

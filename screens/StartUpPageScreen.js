@@ -482,11 +482,7 @@ const StartUpPageScreen = props => {
       <View
         style={StyleSheet.applyWidth(
           {
-            bottom: [
-              { minWidth: Breakpoints.Mobile, value: '12%' },
-              { minWidth: Breakpoints.Tablet, value: 0 },
-              { minWidth: Breakpoints.Laptop, value: 100 },
-            ],
+            bottom: '7%',
             flexDirection: 'row',
             marginLeft: '5%',
             marginRight: '5%',

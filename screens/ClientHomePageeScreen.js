@@ -1561,6 +1561,16 @@ const ClientHomePageeScreen = props => {
                             {/* Cancel */}
                             <Button
                               iconPosition={'left'}
+                              onPress={() => {
+                                try {
+                                  if (navigation.canGoBack()) {
+                                    navigation.popToTop();
+                                  }
+                                  navigation.replace('ClientHomePageeScreen');
+                                } catch (err) {
+                                  console.error(err);
+                                }
+                              }}
                               style={StyleSheet.applyWidth(
                                 {
                                   backgroundColor:
@@ -1582,10 +1592,11 @@ const ClientHomePageeScreen = props => {
                               iconPosition={'left'}
                               onPress={() => {
                                 try {
-                                  setGlobalVariableValue({
-                                    key: 'AUTH_HEADER',
-                                    value: false,
-                                  });
+                                  /* hidden 'Set Variable' action */
+                                  if (navigation.canGoBack()) {
+                                    navigation.popToTop();
+                                  }
+                                  navigation.replace('StartUpPageScreen');
                                 } catch (err) {
                                   console.error(err);
                                 }
