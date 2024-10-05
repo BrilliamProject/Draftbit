@@ -1,7 +1,7 @@
 # Welcome to your Draftbit app!
 
 This `README` is designed to help you get your Draftbit app running locally. Read
-through yaen the next few sections carefully, and if you encounter any issues please
+through the next few sections carefully, and if you encounter any issues please
 do not hesitate to post in [Community](https://community.draftbit.com).
 
 > Note that all of the commands in this document should be run using your
