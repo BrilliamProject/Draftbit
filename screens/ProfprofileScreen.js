@@ -104,18 +104,7 @@ const ProfprofileScreen = props => {
               dimensions.width
             )}
           >
-            <Touchable
-              onPress={() => {
-                try {
-                  if (navigation.canGoBack()) {
-                    navigation.popToTop();
-                  }
-                  navigation.replace('StartUpPageScreen');
-                } catch (err) {
-                  console.error(err);
-                }
-              }}
-            >
+            <Touchable>
               <Circle
                 bgColor={palettes.App.Community_Modal_Opacity_Overlay}
                 size={31}

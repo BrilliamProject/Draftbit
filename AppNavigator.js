@@ -76,6 +76,7 @@ export default function RootAppNavigator() {
       linking={LinkingConfiguration}
     >
       <Stack.Navigator
+        initialRouteName="StartUpPageScreen"
         screenOptions={({ navigation }) => ({
           cardStyle: { flex: 1 },
           headerBackImage:

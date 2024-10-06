@@ -5,7 +5,7 @@
         "usesNonExemptEncryption": false
       },
       "infoPlist": {},
-      "buildNumber": "1.6.0",
+      "buildNumber": "1.17.0",
       "supportsTablet": false,
       "bundleIdentifier": "com.draftbit.untitledapp",
       "usesIcloudStorage": false
@@ -36,7 +36,7 @@
     "android": {
       "package": "com.draftbit.untitledapp",
       "permissions": [],
-      "versionCode": 6,
+      "versionCode": 17,
       "adaptiveIcon": {}
     },
     "plugins": [
@@ -87,7 +87,7 @@
       ]
     ],
     "privacy": "unlisted",
-    "version": "1.6.0",
+    "version": "1.17.0",
     "platforms": [
       "ios",
       "android",

@@ -35,8 +35,12 @@ const StartUpPageScreen = props => {
 
   return (
     <ScreenContainer
+      hasBottomSafeArea={false}
+      hasLeftSafeArea={true}
+      hasRightSafeArea={true}
       hasSafeArea={false}
-      scrollable={false}
+      hasTopSafeArea={false}
+      scrollable={true}
       style={StyleSheet.applyWidth(
         { padding: { minWidth: Breakpoints.Laptop, value: '5%' } },
         dimensions.width

@@ -348,18 +348,7 @@ const ClientHomePageeScreen = props => {
           dimensions.width
         )}
       >
-        <Touchable
-          onPress={() => {
-            try {
-              if (navigation.canGoBack()) {
-                navigation.popToTop();
-              }
-              navigation.replace('StartUpPageScreen');
-            } catch (err) {
-              console.error(err);
-            }
-          }}
-        ></Touchable>
+        <Touchable></Touchable>
         {/* Left Section */}
         <View
           style={StyleSheet.applyWidth(
@@ -1593,10 +1582,6 @@ const ClientHomePageeScreen = props => {
                               onPress={() => {
                                 try {
                                   /* hidden 'Set Variable' action */
-                                  if (navigation.canGoBack()) {
-                                    navigation.popToTop();
-                                  }
-                                  navigation.replace('StartUpPageScreen');
                                 } catch (err) {
                                   console.error(err);
                                 }
