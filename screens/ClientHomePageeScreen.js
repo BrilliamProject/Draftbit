@@ -1582,6 +1582,10 @@ const ClientHomePageeScreen = props => {
                               onPress={() => {
                                 try {
                                   /* hidden 'Set Variable' action */
+                                  if (navigation.canGoBack()) {
+                                    navigation.popToTop();
+                                  }
+                                  navigation.replace('StartUpPageScreen');
                                 } catch (err) {
                                   console.error(err);
                                 }
