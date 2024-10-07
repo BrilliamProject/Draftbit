@@ -335,11 +335,11 @@ const ClientHomePageTestingScreen = props => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginRight: { minWidth: Breakpoints.Laptop, value: '5%' },
-            marginTop: 8,
-            paddingBottom: 8,
-            paddingLeft: 16,
-            paddingRight: 16,
-            paddingTop: 8,
+            marginTop: 5,
+            paddingBottom: '5%',
+            paddingLeft: '10%',
+            paddingRight: '10%',
+            paddingTop: '5%',
           },
           dimensions.width
         )}

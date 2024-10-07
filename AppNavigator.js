@@ -143,6 +143,7 @@ export default function RootAppNavigator() {
           name="ClientHomePageTestingScreen"
           component={ClientHomePageTestingScreen}
           options={({ navigation }) => ({
+            headerShown: false,
             title: 'ClientHomePageTesting',
           })}
         />
