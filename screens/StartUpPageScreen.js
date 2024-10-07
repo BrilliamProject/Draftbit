@@ -146,6 +146,10 @@ const StartUpPageScreen = props => {
           />
         </View>
       </View>
+      {/* spacer_view 2 */}
+      <View style={StyleSheet.applyWidth({ height: '3%' }, dimensions.width)}>
+        <Spacer bottom={'12'} left={'12'} right={'12'} top={12} />
+      </View>
       {/* image */}
       <View
         style={StyleSheet.applyWidth(
