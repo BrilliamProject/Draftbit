@@ -152,13 +152,18 @@ const StartUpPageScreen = props => {
           {
             alignContent: { minWidth: Breakpoints.Tablet, value: 'center' },
             alignItems: 'flex-end',
+            alignSelf: { minWidth: Breakpoints.Tablet, value: 'center' },
+            flexWrap: { minWidth: Breakpoints.Tablet, value: 'wrap' },
             height: [
               { minWidth: Breakpoints.Mobile, value: '40%' },
               { minWidth: Breakpoints.Laptop, value: '90%' },
               { minWidth: Breakpoints.Desktop, value: '90%' },
               { minWidth: Breakpoints.Tablet, value: '90%' },
             ],
-            justifyContent: 'flex-start',
+            justifyContent: [
+              { minWidth: Breakpoints.Mobile, value: 'flex-start' },
+              { minWidth: Breakpoints.Tablet, value: 'center' },
+            ],
             marginLeft: '2%',
             marginRight: [
               { minWidth: Breakpoints.Laptop, value: '2%' },
@@ -168,10 +173,7 @@ const StartUpPageScreen = props => {
               { minWidth: Breakpoints.Mobile, value: '5%' },
               { minWidth: Breakpoints.Laptop, value: '1.5%' },
             ],
-            padding: [
-              { minWidth: Breakpoints.Tablet, value: '2%' },
-              { minWidth: Breakpoints.Mobile, value: '2%' },
-            ],
+            padding: '2%',
             width: [
               { minWidth: Breakpoints.Tablet, value: '95%' },
               { minWidth: Breakpoints.Laptop, value: '95%' },
