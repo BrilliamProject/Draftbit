@@ -52,6 +52,10 @@ const StartUpPageScreen = props => {
         style={StyleSheet.applyWidth(
           {
             alignItems: 'flex-start',
+            bottom: [
+              { minWidth: Breakpoints.Laptop, value: '5%' },
+              { minWidth: Breakpoints.Desktop, value: '5%' },
+            ],
             flexDirection: [
               { minWidth: Breakpoints.Mobile, value: 'row' },
               { minWidth: Breakpoints.Tablet, value: 'row' },
@@ -103,7 +107,14 @@ const StartUpPageScreen = props => {
         {/* View 2 */}
         <View
           style={StyleSheet.applyWidth(
-            { top: { minWidth: Breakpoints.Laptop, value: '15%' } },
+            {
+              height: [
+                { minWidth: Breakpoints.Desktop, value: '60%' },
+                { minWidth: Breakpoints.Laptop, value: '35%' },
+              ],
+              top: { minWidth: Breakpoints.Laptop, value: '15%' },
+              width: { minWidth: Breakpoints.Laptop, value: '18%' },
+            },
             dimensions.width
           )}
         >
