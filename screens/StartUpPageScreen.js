@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Button,
   Icon,
+  LottieAnimation,
   ScreenContainer,
   Spacer,
   Surface,
@@ -65,7 +66,6 @@ const StartUpPageScreen = props => {
               { minWidth: Breakpoints.Mobile, value: '2%' },
             ],
             marginTop: '2%',
-            top: { minWidth: Breakpoints.Tablet, value: 12 },
           },
           dimensions.width
         )}
@@ -142,49 +142,47 @@ const StartUpPageScreen = props => {
             alignContent: { minWidth: Breakpoints.Tablet, value: 'center' },
             alignItems: 'flex-end',
             height: [
-              { minWidth: Breakpoints.Laptop, value: '40%' },
               { minWidth: Breakpoints.Mobile, value: '40%' },
-              { minWidth: Breakpoints.Desktop, value: '40%' },
+              { minWidth: Breakpoints.Laptop, value: '90%' },
+              { minWidth: Breakpoints.Desktop, value: '90%' },
+              { minWidth: Breakpoints.Tablet, value: '90%' },
             ],
             justifyContent: 'flex-start',
-            margin: 5,
-            marginLeft: [
-              { minWidth: Breakpoints.Laptop, value: '40%' },
-              { minWidth: Breakpoints.Tablet, value: '40%' },
+            marginLeft: '2%',
+            marginRight: [
+              { minWidth: Breakpoints.Laptop, value: '2%' },
+              { minWidth: Breakpoints.Mobile, value: '2%' },
             ],
-            marginRight: { minWidth: Breakpoints.Laptop, value: '2%' },
             marginTop: [
               { minWidth: Breakpoints.Mobile, value: '5%' },
               { minWidth: Breakpoints.Laptop, value: '1.5%' },
             ],
-            padding: 5,
+            padding: [
+              { minWidth: Breakpoints.Tablet, value: '2%' },
+              { minWidth: Breakpoints.Mobile, value: '2%' },
+            ],
             width: [
-              { minWidth: Breakpoints.Tablet, value: '60%' },
-              { minWidth: Breakpoints.Laptop, value: '65%' },
-              { minWidth: Breakpoints.Mobile, value: '100%' },
-              { minWidth: Breakpoints.Desktop, value: '40%' },
+              { minWidth: Breakpoints.Tablet, value: '95%' },
+              { minWidth: Breakpoints.Laptop, value: '95%' },
+              { minWidth: Breakpoints.Mobile, value: '96%' },
+              { minWidth: Breakpoints.Desktop, value: '90%' },
             ],
           },
           dimensions.width
         )}
       >
-        {/* Image 2 */}
         <Image
           resizeMode={'cover'}
-          {...GlobalStyles.ImageStyles(theme)['Image 2'].props}
+          {...GlobalStyles.ImageStyles(theme)['Image 3'].props}
           source={imageSource(Images['inter'])}
           style={StyleSheet.applyWidth(
             StyleSheet.compose(
-              GlobalStyles.ImageStyles(theme)['Image 2'].style,
+              GlobalStyles.ImageStyles(theme)['Image 3'].style,
               {
-                height: [
-                  { minWidth: Breakpoints.Laptop, value: '100%' },
-                  { minWidth: Breakpoints.Mobile, value: '100%' },
-                ],
-                width: [
-                  { minWidth: Breakpoints.Laptop, value: '80%' },
-                  { minWidth: Breakpoints.Mobile, value: '100%' },
-                ],
+                height: '100%',
+                minHeight: { minWidth: Breakpoints.Tablet, value: '100%' },
+                minWidth: { minWidth: Breakpoints.Tablet, value: '100%' },
+                width: '100%',
               }
             ),
             dimensions.width
@@ -343,7 +341,31 @@ const StartUpPageScreen = props => {
         {/* create+client */}
         <View
           style={StyleSheet.applyWidth(
-            { marginRight: '60%' },
+            {
+              borderColor: [
+                {
+                  minWidth: Breakpoints.Laptop,
+                  value: palettes.Brand['Light 2'],
+                },
+                {
+                  minWidth: Breakpoints.Mobile,
+                  value: palettes.Brand['Light 2'],
+                },
+              ],
+              borderRadius: [
+                { minWidth: Breakpoints.Laptop, value: 5 },
+                { minWidth: Breakpoints.Mobile, value: 5 },
+              ],
+              borderWidth: [
+                { minWidth: Breakpoints.Laptop, value: 2 },
+                { minWidth: Breakpoints.Mobile, value: 2 },
+              ],
+              marginRight: '60%',
+              padding: [
+                { minWidth: Breakpoints.Laptop, value: '6%' },
+                { minWidth: Breakpoints.Mobile, value: '6%' },
+              ],
+            },
             dimensions.width
           )}
         >
@@ -370,37 +392,25 @@ const StartUpPageScreen = props => {
                 }
               }}
             >
-              <TextField
-                autoCapitalize={'none'}
-                autoCorrect={true}
-                changeTextDelay={500}
-                multiline={true}
-                numberOfLines={4}
-                onChangeText={newStyledTextAreaValue => {
-                  const textAreaValue = newStyledTextAreaValue;
-                  try {
-                    setStyledTextAreaValue5(newStyledTextAreaValue);
-                  } catch (err) {
-                    console.error(err);
-                  }
-                }}
-                type={'solid'}
-                webShowOutline={true}
-                disabled={true}
-                placeholder={'Clients Seeking Interview'}
-                placeholderTextColor={theme.colors.text.strong}
+              <Text
+                accessible={true}
+                selectable={false}
+                {...GlobalStyles.TextStyles(theme)['Text 2'].props}
                 style={StyleSheet.applyWidth(
-                  {
-                    backgroundColor: theme.colors.background.brand,
-                    borderColor: theme.colors.text.strong,
-                    color: palettes.Brand.Community_Dark_UI,
-                    fontFamily: 'Acme_400Regular',
-                    fontSize: 16,
-                  },
+                  StyleSheet.compose(
+                    GlobalStyles.TextStyles(theme)['Text 2'].style,
+                    {
+                      color: {
+                        minWidth: Breakpoints.Laptop,
+                        value: theme.colors.text.medium,
+                      },
+                    }
+                  ),
                   dimensions.width
                 )}
-                value={styledTextAreaValue5}
-              />
+              >
+                {'Clients Seeking Interview'}
+              </Text>
             </Touchable>
           </Surface>
         </View>
@@ -408,12 +418,34 @@ const StartUpPageScreen = props => {
         <View
           style={StyleSheet.applyWidth(
             {
+              borderColor: [
+                {
+                  minWidth: Breakpoints.Laptop,
+                  value: palettes.Brand['Light 2'],
+                },
+                {
+                  minWidth: Breakpoints.Mobile,
+                  value: palettes.Brand['Light 2'],
+                },
+              ],
+              borderRadius: [
+                { minWidth: Breakpoints.Laptop, value: 5 },
+                { minWidth: Breakpoints.Mobile, value: 5 },
+              ],
+              borderWidth: [
+                { minWidth: Breakpoints.Laptop, value: 2 },
+                { minWidth: Breakpoints.Mobile, value: 2 },
+              ],
               bottom: '50%',
               marginLeft: [
                 { minWidth: Breakpoints.Mobile, value: '60%' },
                 { minWidth: Breakpoints.Laptop, value: '60%' },
               ],
               minHeight: { minWidth: Breakpoints.Laptop, value: 40 },
+              padding: [
+                { minWidth: Breakpoints.Laptop, value: '6%' },
+                { minWidth: Breakpoints.Mobile, value: '6%' },
+              ],
             },
             dimensions.width
           )}
@@ -445,39 +477,25 @@ const StartUpPageScreen = props => {
                 }
               }}
             >
-              <TextField
-                autoCapitalize={'none'}
-                autoCorrect={true}
-                changeTextDelay={500}
-                multiline={true}
-                numberOfLines={4}
-                onChangeText={newStyledTextAreaValue => {
-                  const textAreaValue = newStyledTextAreaValue;
-                  try {
-                    setStyledTextAreaValue6(newStyledTextAreaValue);
-                  } catch (err) {
-                    console.error(err);
-                  }
-                }}
-                type={'solid'}
-                webShowOutline={true}
-                disabled={true}
-                placeholder={'Professional Looking for Clients'}
-                placeholderTextColor={theme.colors.text.strong}
+              <Text
+                accessible={true}
+                selectable={false}
+                {...GlobalStyles.TextStyles(theme)['Text 2'].props}
                 style={StyleSheet.applyWidth(
-                  {
-                    backgroundColor: theme.colors.background.brand,
-                    borderColor: theme.colors.text.strong,
-                    color: palettes.Brand.Community_Dark_UI,
-                    fontFamily: 'Acme_400Regular',
-                    fontSize: 16,
-                    minHeight: { minWidth: Breakpoints.Laptop, value: 40 },
-                    opacity: 0.86,
-                  },
+                  StyleSheet.compose(
+                    GlobalStyles.TextStyles(theme)['Text 2'].style,
+                    {
+                      color: {
+                        minWidth: Breakpoints.Laptop,
+                        value: theme.colors.text.medium,
+                      },
+                    }
+                  ),
                   dimensions.width
                 )}
-                value={styledTextAreaValue6}
-              />
+              >
+                {'Professional Looking for Clients'}
+              </Text>
             </Touchable>
           </Surface>
         </View>
@@ -486,7 +504,7 @@ const StartUpPageScreen = props => {
       <View
         style={StyleSheet.applyWidth(
           {
-            bottom: '7%',
+            bottom: '4%',
             flexDirection: 'row',
             marginLeft: '5%',
             marginRight: '5%',

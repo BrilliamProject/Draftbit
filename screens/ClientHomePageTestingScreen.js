@@ -11,6 +11,7 @@ import {
   SimpleStyleFlatList,
   SimpleStyleKeyboardAwareScrollView,
   SimpleStyleScrollView,
+  Spacer,
   Surface,
   TextInput,
   Touchable,
@@ -350,6 +351,7 @@ const ClientHomePageTestingScreen = props => {
             dimensions.width
           )}
         >
+          <Spacer bottom={8} left={8} right={8} top={16} />
           <Text
             accessible={true}
             selectable={false}

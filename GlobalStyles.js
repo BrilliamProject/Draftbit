@@ -161,3 +161,8 @@ export const ActionSheetItemStyles = theme =>
   StyleSheet.create({
     'Action Sheet Item': { style: { textAlign: 'center' }, props: {} },
   });
+
+export const LottieAnimationStyles = theme =>
+  StyleSheet.create({
+    'Lottie Animation': { style: { height: 100, width: 100 }, props: {} },
+  });
