@@ -332,7 +332,7 @@ const ClientHomePageeScreen = props => {
       hasSafeArea={true}
       hasTopSafeArea={true}
     >
-      <Spacer bottom={20} left={'8'} right={'8'} top={20} />
+      <Spacer bottom={10} left={'8'} right={'8'} top={10} />
       {/* Top Navigation Header */}
       <View
         style={StyleSheet.applyWidth(
@@ -358,7 +358,11 @@ const ClientHomePageeScreen = props => {
               alignItems: 'flex-start',
               bottom: '10%',
               justifyContent: 'center',
-              marginLeft: 13,
+              marginLeft: [
+                { minWidth: Breakpoints.Tablet, value: '5%' },
+                { minWidth: Breakpoints.Mobile, value: '13%' },
+                { minWidth: Breakpoints.Desktop, value: 1 },
+              ],
               right: [
                 { minWidth: Breakpoints.Mobile, value: '18%' },
                 { minWidth: Breakpoints.Tablet, value: '33%' },
@@ -1265,6 +1269,10 @@ const ClientHomePageeScreen = props => {
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 35 },
+                                  {
+                                    minWidth: Breakpoints.BigScreen,
+                                    value: 45,
+                                  },
                                 ],
                                 marginLeft: 20,
                               },
@@ -1312,6 +1320,10 @@ const ClientHomePageeScreen = props => {
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 35 },
+                                  {
+                                    minWidth: Breakpoints.BigScreen,
+                                    value: 45,
+                                  },
                                 ],
                                 marginLeft: 20,
                               },
@@ -1359,6 +1371,10 @@ const ClientHomePageeScreen = props => {
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 35 },
+                                  {
+                                    minWidth: Breakpoints.BigScreen,
+                                    value: 45,
+                                  },
                                 ],
                                 marginLeft: 20,
                               },
@@ -1406,6 +1422,10 @@ const ClientHomePageeScreen = props => {
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 35 },
+                                  {
+                                    minWidth: Breakpoints.BigScreen,
+                                    value: 45,
+                                  },
                                 ],
                                 marginLeft: 20,
                               },
@@ -1456,6 +1476,10 @@ const ClientHomePageeScreen = props => {
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 35 },
+                                  {
+                                    minWidth: Breakpoints.BigScreen,
+                                    value: 45,
+                                  },
                                 ],
                                 marginLeft: 20,
                                 opacity: 0.6,
