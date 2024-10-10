@@ -1079,8 +1079,7 @@ const ClientHomePageeScreen = props => {
                       ],
                       width: [
                         { minWidth: Breakpoints.Mobile, value: '30%' },
-                        { minWidth: Breakpoints.Tablet, value: '10%' },
-                        { minWidth: Breakpoints.Laptop, value: 8 },
+                        { minWidth: Breakpoints.Tablet, value: '8%' },
                       ],
                     }
                   ),

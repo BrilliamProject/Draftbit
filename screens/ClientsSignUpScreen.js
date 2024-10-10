@@ -6,6 +6,7 @@ import {
   Icon,
   IconButton,
   ScreenContainer,
+  Spacer,
   TextInput,
   Touchable,
   withTheme,
@@ -236,10 +237,10 @@ const ClientsSignUpScreen = props => {
               paddingLeft: 20,
               paddingRight: 20,
               width: [
-                { minWidth: Breakpoints.Laptop, value: '60%' },
                 { minWidth: Breakpoints.Desktop, value: '50%' },
                 { minWidth: Breakpoints.Mobile, value: '90%' },
                 { minWidth: Breakpoints.Tablet, value: '80%' },
+                { minWidth: Breakpoints.Laptop, value: '40%' },
               ],
             },
             dimensions.width
@@ -318,6 +319,7 @@ const ClientsSignUpScreen = props => {
             />
           </View>
         </View>
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Country */}
         <View
           style={StyleSheet.applyWidth(
@@ -337,9 +339,9 @@ const ClientsSignUpScreen = props => {
               paddingRight: 20,
               width: [
                 { minWidth: Breakpoints.Mobile, value: '90%' },
-                { minWidth: Breakpoints.Laptop, value: '60%' },
                 { minWidth: Breakpoints.Desktop, value: '50%' },
                 { minWidth: Breakpoints.Tablet, value: '80%' },
+                { minWidth: Breakpoints.Laptop, value: '40%' },
               ],
             },
             dimensions.width
@@ -418,6 +420,8 @@ const ClientsSignUpScreen = props => {
             />
           </View>
         </View>
+        {/* Spacer 2 */}
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Email 2 */}
         <View
           style={StyleSheet.applyWidth(
@@ -437,9 +441,9 @@ const ClientsSignUpScreen = props => {
               paddingRight: 20,
               width: [
                 { minWidth: Breakpoints.Mobile, value: '90%' },
-                { minWidth: Breakpoints.Laptop, value: '60%' },
                 { minWidth: Breakpoints.Desktop, value: '50%' },
                 { minWidth: Breakpoints.Tablet, value: '80%' },
+                { minWidth: Breakpoints.Laptop, value: '40%' },
               ],
             },
             dimensions.width
@@ -518,6 +522,8 @@ const ClientsSignUpScreen = props => {
             />
           </View>
         </View>
+        {/* Spacer 3 */}
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Password */}
         <View
           style={StyleSheet.applyWidth(
@@ -536,10 +542,10 @@ const ClientsSignUpScreen = props => {
               paddingLeft: 20,
               paddingRight: 20,
               width: [
-                { minWidth: Breakpoints.Laptop, value: '60%' },
                 { minWidth: Breakpoints.Desktop, value: '50%' },
                 { minWidth: Breakpoints.Mobile, value: '90%' },
                 { minWidth: Breakpoints.Tablet, value: '80%' },
+                { minWidth: Breakpoints.Laptop, value: '40%' },
               ],
             },
             dimensions.width
@@ -619,6 +625,8 @@ const ClientsSignUpScreen = props => {
             />
           </View>
         </View>
+        {/* Spacer 4 */}
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Remember me */}
         <View style={StyleSheet.applyWidth({ width: 165 }, dimensions.width)}>
           <CheckboxRow
@@ -668,9 +676,9 @@ const ClientsSignUpScreen = props => {
               textAlign: 'center',
               width: [
                 { minWidth: Breakpoints.Mobile, value: '70%' },
-                { minWidth: Breakpoints.Laptop, value: '50%' },
                 { minWidth: Breakpoints.Desktop, value: '40%' },
                 { minWidth: Breakpoints.Tablet, value: '50%' },
+                { minWidth: Breakpoints.Laptop, value: '40%' },
               ],
             },
             dimensions.width
@@ -729,7 +737,7 @@ const ClientsSignUpScreen = props => {
             {
               flexDirection: 'row',
               justifyContent: 'space-evenly',
-              width: '100%',
+              width: { minWidth: Breakpoints.Laptop, value: '80%' },
             },
             dimensions.width
           )}
