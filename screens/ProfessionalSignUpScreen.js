@@ -6,6 +6,7 @@ import {
   Icon,
   IconButton,
   ScreenContainer,
+  Spacer,
   TextInput,
   Touchable,
   withTheme,
@@ -319,6 +320,7 @@ const ProfessionalSignUpScreen = props => {
             />
           </View>
         </View>
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Profession */}
         <View
           style={StyleSheet.applyWidth(
@@ -419,6 +421,8 @@ const ProfessionalSignUpScreen = props => {
             />
           </View>
         </View>
+        {/* Spacer 2 */}
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Country */}
         <View
           style={StyleSheet.applyWidth(
@@ -519,6 +523,8 @@ const ProfessionalSignUpScreen = props => {
             />
           </View>
         </View>
+        {/* Spacer 3 */}
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Email 2 */}
         <View
           style={StyleSheet.applyWidth(
@@ -619,6 +625,8 @@ const ProfessionalSignUpScreen = props => {
             />
           </View>
         </View>
+        {/* Spacer 4 */}
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Password */}
         <View
           style={StyleSheet.applyWidth(

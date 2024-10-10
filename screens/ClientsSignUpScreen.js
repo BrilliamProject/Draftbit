@@ -736,6 +736,7 @@ const ClientsSignUpScreen = props => {
           style={StyleSheet.applyWidth(
             {
               flexDirection: 'row',
+              gap: 10,
               justifyContent: 'space-evenly',
               width: { minWidth: Breakpoints.Laptop, value: '80%' },
             },

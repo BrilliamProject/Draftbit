@@ -358,6 +358,7 @@ const ClientHomePageeScreen = props => {
               alignItems: 'flex-start',
               bottom: '10%',
               justifyContent: 'center',
+              marginLeft: '10%',
               right: [
                 { minWidth: Breakpoints.Mobile, value: '18%' },
                 { minWidth: Breakpoints.Tablet, value: '33%' },
@@ -1054,8 +1055,8 @@ const ClientHomePageeScreen = props => {
                       borderRadius: 20,
                       height: [
                         { minWidth: Breakpoints.Mobile, value: '20%' },
-                        { minWidth: Breakpoints.Tablet, value: '32%' },
-                        { minWidth: Breakpoints.Laptop, value: '25%' },
+                        { minWidth: Breakpoints.Tablet, value: '35%' },
+                        { minWidth: Breakpoints.Laptop, value: '30%' },
                       ],
                       left: [
                         { minWidth: Breakpoints.Mobile, value: '55%' },
@@ -1066,7 +1067,7 @@ const ClientHomePageeScreen = props => {
                       marginLeft: '10%',
                       marginRight: '10%',
                       marginTop: '10%',
-                      minHeight: 25,
+                      minHeight: null,
                       paddingBottom: '10%',
                       paddingLeft: '10%',
                       paddingRight: '10%',
@@ -1080,6 +1081,7 @@ const ClientHomePageeScreen = props => {
                       width: [
                         { minWidth: Breakpoints.Mobile, value: '30%' },
                         { minWidth: Breakpoints.Tablet, value: '8%' },
+                        { minWidth: Breakpoints.Laptop, value: '6%' },
                       ],
                     }
                   ),
@@ -1255,7 +1257,7 @@ const ClientHomePageeScreen = props => {
                                 fontFamily: 'Inter_600SemiBold',
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
-                                  { minWidth: Breakpoints.Tablet, value: 15 },
+                                  { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 25 },
                                 ],
                                 marginLeft: 20,
@@ -1302,7 +1304,7 @@ const ClientHomePageeScreen = props => {
                                 fontFamily: 'Inter_600SemiBold',
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
-                                  { minWidth: Breakpoints.Tablet, value: 15 },
+                                  { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 25 },
                                 ],
                                 marginLeft: 20,
@@ -1349,7 +1351,7 @@ const ClientHomePageeScreen = props => {
                                 fontFamily: 'Inter_600SemiBold',
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
-                                  { minWidth: Breakpoints.Tablet, value: 15 },
+                                  { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 25 },
                                 ],
                                 marginLeft: 20,
@@ -1396,7 +1398,7 @@ const ClientHomePageeScreen = props => {
                                 fontFamily: 'Inter_600SemiBold',
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
-                                  { minWidth: Breakpoints.Tablet, value: 15 },
+                                  { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 25 },
                                 ],
                                 marginLeft: 20,
@@ -1446,7 +1448,7 @@ const ClientHomePageeScreen = props => {
                                 fontFamily: 'Inter_600SemiBold',
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
-                                  { minWidth: Breakpoints.Tablet, value: 15 },
+                                  { minWidth: Breakpoints.Tablet, value: 20 },
                                   { minWidth: Breakpoints.Desktop, value: 25 },
                                 ],
                                 marginLeft: 20,

@@ -6,6 +6,7 @@ import {
   Icon,
   IconButton,
   ScreenContainer,
+  Spacer,
   TextInput,
   Touchable,
   withTheme,
@@ -344,6 +345,7 @@ const ProfessionalSignInScreen = props => {
             />
           </View>
         </View>
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Password */}
         <View
           style={StyleSheet.applyWidth(
@@ -445,6 +447,8 @@ const ProfessionalSignInScreen = props => {
             />
           </View>
         </View>
+        {/* Spacer 2 */}
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Remember me */}
         <View style={StyleSheet.applyWidth({ width: 160 }, dimensions.width)}>
           <CheckboxRow
