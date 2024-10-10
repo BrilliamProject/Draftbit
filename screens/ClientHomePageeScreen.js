@@ -358,7 +358,7 @@ const ClientHomePageeScreen = props => {
               alignItems: 'flex-start',
               bottom: '10%',
               justifyContent: 'center',
-              marginLeft: '10%',
+              marginLeft: 13,
               right: [
                 { minWidth: Breakpoints.Mobile, value: '18%' },
                 { minWidth: Breakpoints.Tablet, value: '33%' },
@@ -1054,7 +1054,7 @@ const ClientHomePageeScreen = props => {
                       backgroundColor: theme.colors.foreground.brand,
                       borderRadius: 20,
                       height: [
-                        { minWidth: Breakpoints.Mobile, value: '20%' },
+                        { minWidth: Breakpoints.Mobile, value: '22%' },
                         { minWidth: Breakpoints.Tablet, value: '35%' },
                         { minWidth: Breakpoints.Laptop, value: '30%' },
                       ],
@@ -1067,6 +1067,7 @@ const ClientHomePageeScreen = props => {
                       marginLeft: '10%',
                       marginRight: '10%',
                       marginTop: '10%',
+                      maxWidth: { minWidth: Breakpoints.Desktop, value: '2%' },
                       minHeight: null,
                       paddingBottom: '10%',
                       paddingLeft: '10%',
@@ -1081,7 +1082,6 @@ const ClientHomePageeScreen = props => {
                       width: [
                         { minWidth: Breakpoints.Mobile, value: '30%' },
                         { minWidth: Breakpoints.Tablet, value: '8%' },
-                        { minWidth: Breakpoints.Laptop, value: '6%' },
                       ],
                     }
                   ),
@@ -1145,7 +1145,7 @@ const ClientHomePageeScreen = props => {
                           { minWidth: Breakpoints.Tablet, value: 'center' },
                         ],
                         left: [
-                          { minWidth: Breakpoints.Mobile, value: 30 },
+                          { minWidth: Breakpoints.Mobile, value: 25 },
                           { minWidth: Breakpoints.Tablet, value: 60 },
                           { minWidth: Breakpoints.Laptop, value: 80 },
                           { minWidth: Breakpoints.Desktop, value: 100 },
@@ -1191,7 +1191,13 @@ const ClientHomePageeScreen = props => {
                           <Icon
                             color={palettes.App.ShopAppBlue}
                             name={'AntDesign/closecircleo'}
-                            size={25}
+                            size={StyleSheet.getWidthValue(
+                              [
+                                { minWidth: Breakpoints.Desktop, value: 45 },
+                                { minWidth: Breakpoints.Mobile, value: 25 },
+                              ],
+                              dimensions.width
+                            )}
                           />
                         </Touchable>
                       </View>
@@ -1258,7 +1264,7 @@ const ClientHomePageeScreen = props => {
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
-                                  { minWidth: Breakpoints.Desktop, value: 25 },
+                                  { minWidth: Breakpoints.Desktop, value: 35 },
                                 ],
                                 marginLeft: 20,
                               },
@@ -1305,7 +1311,7 @@ const ClientHomePageeScreen = props => {
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
-                                  { minWidth: Breakpoints.Desktop, value: 25 },
+                                  { minWidth: Breakpoints.Desktop, value: 35 },
                                 ],
                                 marginLeft: 20,
                               },
@@ -1352,7 +1358,7 @@ const ClientHomePageeScreen = props => {
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
-                                  { minWidth: Breakpoints.Desktop, value: 25 },
+                                  { minWidth: Breakpoints.Desktop, value: 35 },
                                 ],
                                 marginLeft: 20,
                               },
@@ -1399,7 +1405,7 @@ const ClientHomePageeScreen = props => {
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
-                                  { minWidth: Breakpoints.Desktop, value: 25 },
+                                  { minWidth: Breakpoints.Desktop, value: 35 },
                                 ],
                                 marginLeft: 20,
                               },
@@ -1449,7 +1455,7 @@ const ClientHomePageeScreen = props => {
                                 fontSize: [
                                   { minWidth: Breakpoints.Mobile, value: 10 },
                                   { minWidth: Breakpoints.Tablet, value: 20 },
-                                  { minWidth: Breakpoints.Desktop, value: 25 },
+                                  { minWidth: Breakpoints.Desktop, value: 35 },
                                 ],
                                 marginLeft: 20,
                                 opacity: 0.6,
@@ -1596,7 +1602,10 @@ const ClientHomePageeScreen = props => {
                                   fontSize: 16,
                                   height: 58,
                                   textAlign: 'center',
-                                  width: '47%',
+                                  width: {
+                                    minWidth: Breakpoints.Tablet,
+                                    value: '38%',
+                                  },
                                 },
                                 dimensions.width
                               )}
@@ -1625,7 +1634,10 @@ const ClientHomePageeScreen = props => {
                                   fontSize: 16,
                                   height: 58,
                                   textAlign: 'center',
-                                  width: '47%',
+                                  width: {
+                                    minWidth: Breakpoints.Tablet,
+                                    value: '38%',
+                                  },
                                 },
                                 dimensions.width
                               )}
