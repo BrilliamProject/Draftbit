@@ -6,6 +6,7 @@ import {
   Icon,
   IconButton,
   ScreenContainer,
+  Spacer,
   TextInput,
   Touchable,
   withTheme,
@@ -263,7 +264,7 @@ const ClientSignInScreen = props => {
               width: [
                 { minWidth: Breakpoints.Mobile, value: '90%' },
                 { minWidth: Breakpoints.Tablet, value: '65%' },
-                { minWidth: Breakpoints.Laptop, value: '60%' },
+                { minWidth: Breakpoints.Laptop, value: '40%' },
               ],
             },
             dimensions.width
@@ -349,6 +350,7 @@ const ClientSignInScreen = props => {
             />
           </View>
         </View>
+        <Spacer bottom={8} left={8} right={8} top={8} />
         {/* Password */}
         <View
           style={StyleSheet.applyWidth(
@@ -370,7 +372,7 @@ const ClientSignInScreen = props => {
               width: [
                 { minWidth: Breakpoints.Mobile, value: '90%' },
                 { minWidth: Breakpoints.Tablet, value: '65%' },
-                { minWidth: Breakpoints.Laptop, value: '60%' },
+                { minWidth: Breakpoints.Laptop, value: '40%' },
               ],
             },
             dimensions.width
@@ -563,12 +565,13 @@ const ClientSignInScreen = props => {
               fontSize: [
                 { minWidth: Breakpoints.Mobile, value: 15 },
                 { minWidth: Breakpoints.Tablet, value: 25 },
+                { minWidth: Breakpoints.Laptop, value: 20 },
               ],
               height: 58,
               textAlign: 'center',
               width: [
                 { minWidth: Breakpoints.Mobile, value: '60%' },
-                { minWidth: Breakpoints.Laptop, value: '50%' },
+                { minWidth: Breakpoints.Laptop, value: '40%' },
               ],
             },
             dimensions.width
@@ -672,7 +675,7 @@ const ClientSignInScreen = props => {
             {
               flexDirection: 'row',
               justifyContent: 'space-evenly',
-              width: '100%',
+              width: { minWidth: Breakpoints.Laptop, value: '80%' },
             },
             dimensions.width
           )}
@@ -791,7 +794,10 @@ const ClientSignInScreen = props => {
               console.error(err);
             }
           }}
-          style={StyleSheet.applyWidth({ width: '100%' }, dimensions.width)}
+          style={StyleSheet.applyWidth(
+            { width: { minWidth: Breakpoints.Laptop, value: '70%' } },
+            dimensions.width
+          )}
         >
           <View
             style={StyleSheet.applyWidth(
@@ -835,6 +841,8 @@ const ClientSignInScreen = props => {
             </Text>
           </View>
         </Touchable>
+        {/* Spacer 2 */}
+        <Spacer bottom={8} left={8} right={8} top={8} />
       </View>
     </ScreenContainer>
   );

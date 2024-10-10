@@ -1001,23 +1001,40 @@ const AccountEditedScreen = props => {
         <Button
           iconPosition={'left'}
           onPress={() => {
-            const handler = async () => {
-              try {
-                /* hidden 'Set Variable' action */
-                /* hidden 'Set Variable' action */
-                const getTheClient = (
-                  await supabaseUpdateClientNumPATCH.mutateAsync({
-                    clientPhoneNumber: clientPhoneNumber,
-                    id: 1,
-                  })
-                )?.json;
-                /* hidden 'Set Variable' action */
-                /* hidden 'Navigate' action */
-              } catch (err) {
-                console.error(err);
-              }
-            };
-            handler();
+            console.log('Save Changes ON_PRESS Start');
+            let error = null;
+            try {
+              console.log('Start ON_PRESS:0 SET_VARIABLE');
+              /* hidden 'Set Variable' action */ console.log(
+                'Complete ON_PRESS:0 SET_VARIABLE'
+              );
+              console.log('Start ON_PRESS:1 SET_VARIABLE');
+              /* hidden 'Set Variable' action */ console.log(
+                'Complete ON_PRESS:1 SET_VARIABLE'
+              );
+              console.log('Start ON_PRESS:2 FETCH_REQUEST');
+              /* hidden 'API Request' action */ console.log(
+                'Complete ON_PRESS:2 FETCH_REQUEST'
+              );
+              console.log('Start ON_PRESS:3 SET_VARIABLE');
+              /* hidden 'Set Variable' action */ console.log(
+                'Complete ON_PRESS:3 SET_VARIABLE'
+              );
+              console.log('Start ON_PRESS:4 NAVIGATE');
+              /* hidden 'Navigate' action */ console.log(
+                'Complete ON_PRESS:4 NAVIGATE'
+              );
+              console.log('Start ON_PRESS:5 CONSOLE_LOG');
+              console.log(clientPhoneNumber, clientAddress);
+              console.log('Complete ON_PRESS:5 CONSOLE_LOG');
+            } catch (err) {
+              console.error(err);
+              error = err.message ?? err;
+            }
+            console.log(
+              'Save Changes ON_PRESS Complete',
+              error ? { error } : 'no error'
+            );
           }}
           style={StyleSheet.applyWidth(
             {

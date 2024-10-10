@@ -36,7 +36,7 @@ import palettes from '../themes/palettes';
 import Breakpoints from '../utils/Breakpoints';
 import * as StyleSheet from '../utils/StyleSheet';
 import imageSource from '../utils/imageSource';
-import openImagePickerUtil from '../utils/openImagePicker';
+import selectFileUtil from '../utils/selectFile';
 import useWindowDimensions from '../utils/useWindowDimensions';
 
 const ProfprofileScreen = props => {
@@ -514,7 +514,14 @@ const ProfprofileScreen = props => {
                         {/* Date */}
                         <View
                           style={StyleSheet.applyWidth(
-                            { flexDirection: 'row', gap: 6 },
+                            {
+                              flexDirection: 'row',
+                              gap: 6,
+                              width: {
+                                minWidth: Breakpoints.Tablet,
+                                value: '60%',
+                              },
+                            },
                             dimensions.width
                           )}
                         >
@@ -562,8 +569,8 @@ const ProfprofileScreen = props => {
                                   console.error(err);
                                 }
                               }}
-                              type={'solid'}
                               date={datePickerValue}
+                              type={'underline'}
                             />
                           </View>
                           {/* EndDate */}
@@ -610,14 +617,75 @@ const ProfprofileScreen = props => {
                                   console.error(err);
                                 }
                               }}
-                              type={'solid'}
                               date={EndDate}
+                              type={'underline'}
                             />
                           </View>
-                          {/* Add */}
+                          {/* upload */}
                           <View
                             style={StyleSheet.applyWidth(
-                              { flexDirection: 'row', top: '45%' },
+                              {
+                                flexDirection: 'row',
+                                left: {
+                                  minWidth: Breakpoints.Tablet,
+                                  value: '5%',
+                                },
+                              },
+                              dimensions.width
+                            )}
+                          >
+                            <Pressable
+                              onPress={() => {
+                                const handler = async () => {
+                                  try {
+                                    const uploaded = await selectFileUtil({
+                                      returnNameAndValue: false,
+                                    });
+                                    /* 'API Request' action requires configuration: choose an API endpoint */
+                                  } catch (err) {
+                                    console.error(err);
+                                  }
+                                };
+                                handler();
+                              }}
+                            >
+                              <Surface
+                                elevation={0}
+                                {...GlobalStyles.SurfaceStyles(theme)['Surface']
+                                  .props}
+                                style={StyleSheet.applyWidth(
+                                  GlobalStyles.SurfaceStyles(theme)['Surface']
+                                    .style,
+                                  dimensions.width
+                                )}
+                              >
+                                <Icon
+                                  size={24}
+                                  color={palettes.Brand.Community_Primary_Alt}
+                                  name={'MaterialIcons/cloud-upload'}
+                                  size={StyleSheet.getWidthValue(
+                                    [
+                                      {
+                                        minWidth: Breakpoints.Tablet,
+                                        value: 55,
+                                      },
+                                    ],
+                                    dimensions.width
+                                  )}
+                                />
+                              </Surface>
+                            </Pressable>
+                          </View>
+                          {/* checked */}
+                          <View
+                            style={StyleSheet.applyWidth(
+                              {
+                                flexDirection: 'row',
+                                left: {
+                                  minWidth: Breakpoints.Tablet,
+                                  value: '10%',
+                                },
+                              },
                               dimensions.width
                             )}
                           >
@@ -635,17 +703,70 @@ const ProfprofileScreen = props => {
                                 <Icon
                                   size={24}
                                   color={palettes.Brand.Community_Primary_Alt}
-                                  name={'Feather/plus-square'}
+                                  name={'Feather/check-circle'}
+                                  size={StyleSheet.getWidthValue(
+                                    [
+                                      {
+                                        minWidth: Breakpoints.Tablet,
+                                        value: 55,
+                                      },
+                                    ],
+                                    dimensions.width
+                                  )}
                                 />
                               </Surface>
                             </Pressable>
                           </View>
                         </View>
+                        {/* Spacer 2 */}
+                        <Spacer bottom={3} left={3} right={3} top={3} />
+                        {/* Add Touchable */}
+                        <Touchable
+                          style={StyleSheet.applyWidth(
+                            {
+                              borderColor: palettes.Blue[500],
+                              borderRadius: 10,
+                              borderWidth: 2,
+                              width: '20%',
+                            },
+                            dimensions.width
+                          )}
+                        >
+                          {/* add */}
+                          <Text
+                            accessible={true}
+                            selectable={false}
+                            {...GlobalStyles.TextStyles(theme)['Text 2'].props}
+                            selectionColor={palettes.App.ShopAppBlue}
+                            style={StyleSheet.applyWidth(
+                              StyleSheet.compose(
+                                GlobalStyles.TextStyles(theme)['Text 2'].style,
+                                {
+                                  alignSelf: 'center',
+                                  color: palettes.Blue[500],
+                                }
+                              ),
+                              dimensions.width
+                            )}
+                          >
+                            {'Add'}
+                          </Text>
+                        </Touchable>
                       </View>
                       {/* Spacer 4 */}
                       <Spacer bottom={8} left={8} right={8} top={8} />
                       {/* companies */}
-                      <View>
+                      <View
+                        style={StyleSheet.applyWidth(
+                          {
+                            width: {
+                              minWidth: Breakpoints.Tablet,
+                              value: '60%',
+                            },
+                          },
+                          dimensions.width
+                        )}
+                      >
                         <Text
                           accessible={true}
                           selectable={false}
@@ -752,7 +873,7 @@ const ProfprofileScreen = props => {
                               }}
                               date={comStartDate}
                               mode={'date'}
-                              type={'solid'}
+                              type={'underline'}
                             />
                           </View>
                           {/* EndDate */}
@@ -799,8 +920,8 @@ const ProfprofileScreen = props => {
                                   console.error(err);
                                 }
                               }}
-                              type={'solid'}
                               date={comendDate}
+                              type={'underline'}
                             />
                           </View>
                         </View>
@@ -840,10 +961,77 @@ const ProfprofileScreen = props => {
                             )}
                             value={Institute}
                           />
-                          {/* Add */}
+                          {/* upload */}
                           <View
                             style={StyleSheet.applyWidth(
-                              { flexDirection: 'row', left: '3%', top: '6%' },
+                              {
+                                flexDirection: 'row',
+                                left: [
+                                  { minWidth: Breakpoints.Mobile, value: '3%' },
+                                  { minWidth: Breakpoints.Tablet, value: 5 },
+                                ],
+                                top: '6%',
+                              },
+                              dimensions.width
+                            )}
+                          >
+                            <Pressable
+                              onPress={() => {
+                                const handler = async () => {
+                                  try {
+                                    const uploaded = await selectFileUtil({
+                                      returnNameAndValue: false,
+                                    });
+                                    /* 'API Request' action requires configuration: choose an API endpoint */
+                                  } catch (err) {
+                                    console.error(err);
+                                  }
+                                };
+                                handler();
+                              }}
+                            >
+                              <Surface
+                                elevation={0}
+                                {...GlobalStyles.SurfaceStyles(theme)['Surface']
+                                  .props}
+                                style={StyleSheet.applyWidth(
+                                  GlobalStyles.SurfaceStyles(theme)['Surface']
+                                    .style,
+                                  dimensions.width
+                                )}
+                              >
+                                <Icon
+                                  size={24}
+                                  color={palettes.Brand.Community_Primary_Alt}
+                                  name={'FontAwesome/cloud-upload'}
+                                  size={StyleSheet.getWidthValue(
+                                    [
+                                      {
+                                        minWidth: Breakpoints.Tablet,
+                                        value: 55,
+                                      },
+                                    ],
+                                    dimensions.width
+                                  )}
+                                />
+                              </Surface>
+                            </Pressable>
+                          </View>
+                          <Spacer bottom={8} left={3} right={3} top={8} />
+                          {/* checked */}
+                          <View
+                            style={StyleSheet.applyWidth(
+                              {
+                                flexDirection: 'row',
+                                left: [
+                                  { minWidth: Breakpoints.Mobile, value: '3%' },
+                                  {
+                                    minWidth: Breakpoints.Tablet,
+                                    value: '10%',
+                                  },
+                                ],
+                                top: '6%',
+                              },
                               dimensions.width
                             )}
                           >
@@ -861,128 +1049,55 @@ const ProfprofileScreen = props => {
                                 <Icon
                                   size={24}
                                   color={palettes.Brand.Community_Primary_Alt}
-                                  name={'AntDesign/plussquareo'}
+                                  name={'Feather/check-circle'}
+                                  size={StyleSheet.getWidthValue(
+                                    [
+                                      {
+                                        minWidth: Breakpoints.Tablet,
+                                        value: 55,
+                                      },
+                                    ],
+                                    dimensions.width
+                                  )}
                                 />
                               </Surface>
                             </Pressable>
                           </View>
                         </View>
-                      </View>
-                      <Spacer left={8} right={8} bottom={18} top={18} />
-                      {/* Uploads */}
-                      <View>
-                        <Text
-                          accessible={true}
-                          selectable={false}
-                          {...GlobalStyles.TextStyles(theme)['Text 2'].props}
+                        {/* Spacer 2 */}
+                        <Spacer bottom={3} left={3} right={3} top={3} />
+                        {/* Add Touchable */}
+                        <Touchable
                           style={StyleSheet.applyWidth(
-                            StyleSheet.compose(
-                              GlobalStyles.TextStyles(theme)['Text 2'].style,
-                              {
-                                fontFamily: [
-                                  {
-                                    minWidth: Breakpoints.Tablet,
-                                    value: 'AbrilFatface_400Regular',
-                                  },
-                                  {
-                                    minWidth: Breakpoints.Mobile,
-                                    value: 'AbrilFatface_400Regular',
-                                  },
-                                ],
-                                fontSize: {
-                                  minWidth: Breakpoints.Tablet,
-                                  value: 20,
-                                },
-                              }
-                            ),
+                            {
+                              borderColor: palettes.Blue[500],
+                              borderRadius: 10,
+                              borderWidth: 2,
+                              width: '20%',
+                            },
                             dimensions.width
                           )}
                         >
-                          {'Upload Documents'}
-                        </Text>
-                        <Spacer bottom={8} left={8} right={8} top={8} />
-                        <Pressable
-                          onPress={() => {
-                            const handler = async () => {
-                              try {
-                                await openImagePickerUtil({
-                                  mediaTypes: 'All',
-                                  allowsEditing: true,
-                                  quality: 0.2,
-                                  allowsMultipleSelection: true,
-                                  permissionErrorMessage:
-                                    'Sorry, we need media library permissions to make this work.',
-                                  showAlertOnPermissionError: true,
-                                  outputBase64: true,
-                                });
-                              } catch (err) {
-                                console.error(err);
-                              }
-                            };
-                            handler();
-                          }}
-                          style={StyleSheet.applyWidth(
-                            { marginLeft: '10%', width: '40%' },
-                            dimensions.width
-                          )}
-                        >
-                          <Surface
-                            elevation={0}
-                            {...GlobalStyles.SurfaceStyles(theme)['Surface']
-                              .props}
+                          {/* add */}
+                          <Text
+                            accessible={true}
+                            selectable={false}
+                            {...GlobalStyles.TextStyles(theme)['Text 2'].props}
+                            selectionColor={palettes.App.ShopAppBlue}
                             style={StyleSheet.applyWidth(
                               StyleSheet.compose(
-                                GlobalStyles.SurfaceStyles(theme)['Surface']
-                                  .style,
+                                GlobalStyles.TextStyles(theme)['Text 2'].style,
                                 {
-                                  backgroundColor: theme.colors.text.medium,
-                                  borderColor:
-                                    palettes.App.Communical_Yellow_Emoticons,
-                                  borderRadius: 25,
-                                  minHeight: 70,
-                                  opacity: 0.33,
-                                  width: '80%',
+                                  alignSelf: 'center',
+                                  color: palettes.Blue[500],
                                 }
                               ),
                               dimensions.width
                             )}
                           >
-                            <View
-                              style={StyleSheet.applyWidth(
-                                { left: '7%', padding: '25%' },
-                                dimensions.width
-                              )}
-                            >
-                              <Icon
-                                color={palettes.Brand.Surface}
-                                name={'AntDesign/cloudupload'}
-                                size={34}
-                                style={StyleSheet.applyWidth(
-                                  { left: '4%' },
-                                  dimensions.width
-                                )}
-                              />
-                            </View>
-                          </Surface>
-                        </Pressable>
-                        {/* Spacer 2 */}
-                        <Spacer bottom={8} left={8} right={8} top={8} />
-                        <View>
-                          {/* Text 2 */}
-                          <Text
-                            accessible={true}
-                            selectable={false}
-                            {...GlobalStyles.TextStyles(theme)['Text 2'].props}
-                            style={StyleSheet.applyWidth(
-                              GlobalStyles.TextStyles(theme)['Text 2'].style,
-                              dimensions.width
-                            )}
-                          >
-                            {' Choose a File '}
+                            {'Add'}
                           </Text>
-                        </View>
-                        {/* Spacer 3 */}
-                        <Spacer bottom={8} left={8} right={8} top={8} />
+                        </Touchable>
                       </View>
                       {/* buttons */}
                       <View
@@ -1316,8 +1431,6 @@ const ProfprofileScreen = props => {
                           </>
                         </View>
                       </View>
-                      {/* View 6 */}
-                      <View />
                     </View>
                   </>
                 );

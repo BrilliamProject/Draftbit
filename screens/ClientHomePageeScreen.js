@@ -10,6 +10,7 @@ import {
   ScreenContainer,
   SimpleStyleFlatList,
   SimpleStyleScrollView,
+  Spacer,
   Surface,
   TextInput,
   Touchable,
@@ -331,6 +332,7 @@ const ClientHomePageeScreen = props => {
       hasSafeArea={true}
       hasTopSafeArea={true}
     >
+      <Spacer bottom={20} left={'8'} right={'8'} top={20} />
       {/* Top Navigation Header */}
       <View
         style={StyleSheet.applyWidth(
@@ -354,7 +356,7 @@ const ClientHomePageeScreen = props => {
           style={StyleSheet.applyWidth(
             {
               alignItems: 'flex-start',
-              bottom: '25%',
+              bottom: '10%',
               justifyContent: 'center',
               right: [
                 { minWidth: Breakpoints.Mobile, value: '18%' },
@@ -1051,13 +1053,14 @@ const ClientHomePageeScreen = props => {
                       backgroundColor: theme.colors.foreground.brand,
                       borderRadius: 20,
                       height: [
-                        { minWidth: Breakpoints.Mobile, value: '23%' },
+                        { minWidth: Breakpoints.Mobile, value: '20%' },
                         { minWidth: Breakpoints.Tablet, value: '32%' },
                         { minWidth: Breakpoints.Laptop, value: '25%' },
                       ],
                       left: [
                         { minWidth: Breakpoints.Mobile, value: '55%' },
                         { minWidth: Breakpoints.Tablet, value: '68%' },
+                        { minWidth: Breakpoints.Laptop, value: '68%' },
                       ],
                       marginBottom: '10%',
                       marginLeft: '10%',
@@ -1069,12 +1072,15 @@ const ClientHomePageeScreen = props => {
                       paddingRight: '10%',
                       paddingTop: '10%',
                       top: [
-                        { minWidth: Breakpoints.Mobile, value: '15%' },
+                        { minWidth: Breakpoints.Mobile, value: '12%' },
                         { minWidth: Breakpoints.Tablet, value: '9%' },
+                        { minWidth: Breakpoints.Laptop, value: '7%' },
+                        { minWidth: Breakpoints.Desktop, value: 2 },
                       ],
                       width: [
                         { minWidth: Breakpoints.Mobile, value: '30%' },
-                        { minWidth: Breakpoints.Tablet, value: '20%' },
+                        { minWidth: Breakpoints.Tablet, value: '10%' },
+                        { minWidth: Breakpoints.Laptop, value: 8 },
                       ],
                     }
                   ),
@@ -1126,6 +1132,7 @@ const ClientHomePageeScreen = props => {
                         bottom: [
                           { minWidth: Breakpoints.Mobile, value: '12%' },
                           { minWidth: Breakpoints.Tablet, value: '20%' },
+                          { minWidth: Breakpoints.Desktop, value: '30%' },
                         ],
                         flexDirection: 'row',
                         height: 48,
@@ -1137,8 +1144,10 @@ const ClientHomePageeScreen = props => {
                           { minWidth: Breakpoints.Tablet, value: 'center' },
                         ],
                         left: [
-                          { minWidth: Breakpoints.Mobile, value: 35 },
-                          { minWidth: Breakpoints.Tablet, value: 10 },
+                          { minWidth: Breakpoints.Mobile, value: 30 },
+                          { minWidth: Breakpoints.Tablet, value: 60 },
+                          { minWidth: Breakpoints.Laptop, value: 80 },
+                          { minWidth: Breakpoints.Desktop, value: 100 },
                         ],
                         paddingLeft: 24,
                         paddingRight: 24,
@@ -1153,7 +1162,6 @@ const ClientHomePageeScreen = props => {
                           flexDirection: 'row',
                           flexGrow: 1,
                           flexShrink: 0,
-                          left: '20%',
                           marginLeft: '5%',
                           marginRight: '5%',
                         },
@@ -1196,8 +1204,8 @@ const ClientHomePageeScreen = props => {
                         alignSelf: 'center',
                         bottom: [
                           { minWidth: Breakpoints.Mobile, value: '30%' },
-                          { minWidth: Breakpoints.Tablet, value: '24%' },
                           { minWidth: Breakpoints.Laptop, value: '22%' },
+                          { minWidth: Breakpoints.Tablet, value: '25%' },
                         ],
                         right: { minWidth: Breakpoints.Tablet, value: '4%' },
                       },
@@ -1542,7 +1550,24 @@ const ClientHomePageeScreen = props => {
                                 alignItems: 'center',
                                 flexDirection: 'row',
                                 justifyContent: 'space-between',
-                                width: '100%',
+                                width: [
+                                  {
+                                    minWidth: Breakpoints.Mobile,
+                                    value: '100%',
+                                  },
+                                  {
+                                    minWidth: Breakpoints.Tablet,
+                                    value: '60%',
+                                  },
+                                  {
+                                    minWidth: Breakpoints.Desktop,
+                                    value: '50%',
+                                  },
+                                  {
+                                    minWidth: Breakpoints.BigScreen,
+                                    value: '40%',
+                                  },
+                                ],
                               },
                               dimensions.width
                             )}
