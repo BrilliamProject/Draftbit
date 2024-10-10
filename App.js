@@ -63,6 +63,7 @@ const App = () => {
     OpenSans_700Bold: Fonts.OpenSans_700Bold,
     Poppins_400Regular: Fonts.Poppins_400Regular,
     Poppins_500Medium: Fonts.Poppins_500Medium,
+    Poppins_700Bold: Fonts.Poppins_700Bold,
     Rubik_400Regular: Fonts.Rubik_400Regular,
     Rubik_700Bold: Fonts.Rubik_700Bold,
   });

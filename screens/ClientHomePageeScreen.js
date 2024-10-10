@@ -17,14 +17,7 @@ import {
   withTheme,
 } from '@draftbit/ui';
 import { useIsFocused } from '@react-navigation/native';
-import {
-  ActivityIndicator,
-  Image,
-  ImageBackground,
-  Modal,
-  Text,
-  View,
-} from 'react-native';
+import { ActivityIndicator, Image, Modal, Text, View } from 'react-native';
 import { Fetch } from 'react-request';
 import * as GlobalStyles from '../GlobalStyles.js';
 import * as SupabaseApi from '../apis/SupabaseApi.js';
@@ -350,7 +343,6 @@ const ClientHomePageeScreen = props => {
           dimensions.width
         )}
       >
-        <Touchable></Touchable>
         {/* Left Section */}
         <View
           style={StyleSheet.applyWidth(
@@ -465,211 +457,212 @@ const ClientHomePageeScreen = props => {
               transparent={false}
               visible={isvideovisible}
             >
-              {/* Call View */}
-              <View
-                style={StyleSheet.applyWidth({ flex: 1 }, dimensions.width)}
-              >
-                {/* User 1 */}
-                <View
-                  style={StyleSheet.applyWidth(
-                    { borderRadius: 8, flex: 1, overflow: 'hidden' },
-                    dimensions.width
-                  )}
-                >
-                  <ImageBackground
-                    resizeMode={'cover'}
-                    source={
-                      imageSource(Images['Avatar']) ?? imageSource(`${null}`)
-                    }
-                    style={StyleSheet.applyWidth(
-                      {
-                        height: '100%',
-                        justifyContent: 'space-between',
-                        width: '100%',
-                      },
-                      dimensions.width
-                    )}
-                  >
-                    {/* Back */}
-                    <View
-                      style={StyleSheet.applyWidth(
-                        { marginLeft: 20, marginTop: 20 },
-                        dimensions.width
-                      )}
-                    >
-                      <Touchable
-                        onPress={() => {
-                          try {
-                            if (navigation.canGoBack()) {
-                              navigation.popToTop();
-                            }
-                            navigation.replace('ClientHomePageeScreen');
-                          } catch (err) {
-                            console.error(err);
-                          }
-                        }}
-                      >
-                        <Circle
-                          bgColor={palettes.App['Custom Color_20']}
-                          size={48}
-                        >
-                          <Icon
-                            size={24}
-                            color={palettes.App['Custom Color']}
-                            name={'Ionicons/arrow-back-sharp'}
-                          />
-                        </Circle>
-                      </Touchable>
-                    </View>
-                    {/* Name */}
-                    <Text
-                      accessible={true}
-                      selectable={false}
-                      style={StyleSheet.applyWidth(
-                        {
-                          color: palettes.App['Custom Color'],
-                          fontFamily: 'Poppins_500Medium',
-                          fontSize: 15,
-                          paddingBottom: 30,
-                          textAlign: 'center',
-                        },
-                        dimensions.width
-                      )}
-                    >
-                      {'Martin\n'}
-                    </Text>
-                  </ImageBackground>
-                </View>
-                {/* User 2 */}
-                <View
-                  style={StyleSheet.applyWidth(
-                    {
-                      borderRadius: 8,
-                      flex: 1,
-                      marginTop: 4,
-                      overflow: 'hidden',
-                    },
-                    dimensions.width
-                  )}
-                >
-                  <ImageBackground
-                    resizeMode={'cover'}
-                    source={
-                      imageSource(Images['seandon']) ??
-                      imageSource(
-                        'https://s3-us-west-1.amazonaws.com/example-data.draftbit.com/people_photos/square/model-005.jpg'
-                      )
-                    }
-                    style={StyleSheet.applyWidth(
-                      {
-                        height: '100%',
-                        justifyContent: 'flex-end',
-                        width: '100%',
-                      },
-                      dimensions.width
-                    )}
-                  >
-                    {/* Name */}
-                    <Text
-                      accessible={true}
-                      selectable={false}
-                      style={StyleSheet.applyWidth(
-                        {
-                          color: palettes.App['Custom Color'],
-                          fontFamily: 'Poppins_500Medium',
-                          fontSize: 15,
-                          paddingBottom: 30,
-                          textAlign: 'center',
-                        },
-                        dimensions.width
-                      )}
-                    >
-                      {'Katie'}
-                    </Text>
-                  </ImageBackground>
-                </View>
-              </View>
-              {/* Buttons */}
+              {/* Header */}
               <View
                 style={StyleSheet.applyWidth(
                   {
-                    flex: 0,
+                    alignItems: 'center',
                     flexDirection: 'row',
-                    justifyContent: 'space-evenly',
-                    paddingBottom: 25,
-                    paddingTop: 25,
+                    justifyContent: 'space-between',
+                    paddingLeft: 10,
+                    paddingRight: 10,
                   },
                   dimensions.width
                 )}
               >
-                {/* Mute */}
-                <View>
-                  <Touchable>
-                    <Circle bgColor={palettes.App['Custom Color_20']} size={50}>
-                      <Icon
-                        size={24}
-                        color={palettes.App['Custom Color']}
-                        name={'Ionicons/mic-outline'}
-                      />
-                    </Circle>
-                  </Touchable>
-                </View>
-                {/* Speaker */}
-                <View>
-                  <Touchable>
-                    <Circle bgColor={palettes.App['Custom Color_20']} size={50}>
-                      <Icon
-                        size={24}
-                        color={palettes.App['Custom Color']}
-                        name={'Ionicons/volume-medium-outline'}
-                      />
-                    </Circle>
-                  </Touchable>
-                </View>
-                {/* Video */}
-                <View>
-                  <Touchable>
-                    <Circle bgColor={palettes.App['Custom Color_20']} size={50}>
-                      <Icon
-                        size={24}
-                        color={palettes.App['Custom Color']}
-                        name={'Ionicons/videocam-outline'}
-                      />
-                    </Circle>
-                  </Touchable>
-                </View>
-                {/* Chat */}
-                <View>
-                  <Touchable>
-                    <Circle bgColor={palettes.App['Social Orange']} size={50}>
-                      <Icon
-                        size={24}
-                        color={palettes.App['Custom Color']}
-                        name={'Ionicons/chatbox-outline'}
-                      />
-                    </Circle>
-                  </Touchable>
-                </View>
-                {/* Close */}
-                <View>
+                {/* Back */}
+                <View
+                  style={StyleSheet.applyWidth(
+                    {
+                      alignItems: 'center',
+                      height: 48,
+                      justifyContent: 'center',
+                      width: 48,
+                    },
+                    dimensions.width
+                  )}
+                >
                   <Touchable
                     onPress={() => {
                       try {
-                        navigation.goBack();
+                        if (navigation.canGoBack()) {
+                          navigation.popToTop();
+                        }
+                        navigation.replace('ClientHomePageeScreen');
                       } catch (err) {
                         console.error(err);
                       }
                     }}
                   >
-                    <Circle bgColor={palettes.App['Custom Color_31']} size={50}>
-                      <Icon
-                        size={24}
-                        color={palettes.App['Custom Color']}
-                        name={'Entypo/cross'}
-                      />
-                    </Circle>
+                    <Icon
+                      size={24}
+                      color={palettes.Brand.Community_Primary_Alt}
+                      name={'AntDesign/arrowleft'}
+                    />
                   </Touchable>
                 </View>
+              </View>
+              {/* Call View 2 */}
+              <View
+                style={StyleSheet.applyWidth(
+                  {
+                    alignItems: 'center',
+                    flex: 0.75,
+                    justifyContent: 'center',
+                    paddingBottom: 5,
+                    paddingLeft: 20,
+                    paddingRight: 20,
+                    paddingTop: 16,
+                  },
+                  dimensions.width
+                )}
+              >
+                <View
+                  style={StyleSheet.applyWidth(
+                    {
+                      alignItems: 'center',
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                    },
+                    dimensions.width
+                  )}
+                >
+                  {/* User 1 */}
+                  <View>
+                    <Circle bgColor={theme.colors.text.light} size={150}>
+                      <Image
+                        resizeMode={'cover'}
+                        source={imageSource(Images['IconMyChannel'])}
+                        style={StyleSheet.applyWidth(
+                          { height: '150%', width: '150%' },
+                          dimensions.width
+                        )}
+                      />
+                    </Circle>
+                  </View>
+                  {/* User 2 */}
+                  <View
+                    style={StyleSheet.applyWidth(
+                      { marginLeft: -30 },
+                      dimensions.width
+                    )}
+                  >
+                    <Circle bgColor={theme.colors.text.light} size={150}>
+                      <Image
+                        resizeMode={'cover'}
+                        source={imageSource(Images['IconProfile'])}
+                        style={StyleSheet.applyWidth(
+                          { height: '150%', width: '150%' },
+                          dimensions.width
+                        )}
+                      />
+                    </Circle>
+                  </View>
+                </View>
+                {/* waiting for host */}
+                <Text
+                  accessible={true}
+                  selectable={false}
+                  style={StyleSheet.applyWidth(
+                    {
+                      color: palettes.Brand.Community_Primary_Alt,
+                      fontFamily: 'Poppins_700Bold',
+                      fontSize: 25,
+                      marginTop: 50,
+                      textAlign: 'center',
+                    },
+                    dimensions.width
+                  )}
+                >
+                  {'Waiting for host\n'}
+                </Text>
+
+                <Text
+                  accessible={true}
+                  selectable={false}
+                  style={StyleSheet.applyWidth(
+                    {
+                      color: palettes.App['Custom Color_8'],
+                      fontFamily: 'Poppins_400Regular',
+                      fontSize: 15,
+                      marginTop: 15,
+                      textAlign: 'center',
+                    },
+                    dimensions.width
+                  )}
+                >
+                  {'Start conversation now to each other'}
+                </Text>
+              </View>
+              {/* Clicks */}
+              <View
+                style={StyleSheet.applyWidth(
+                  {
+                    alignSelf: {
+                      minWidth: Breakpoints.Tablet,
+                      value: 'center',
+                    },
+                    justifyContent: {
+                      minWidth: Breakpoints.Tablet,
+                      value: 'center',
+                    },
+                    width: { minWidth: Breakpoints.Tablet, value: '50%' },
+                  },
+                  dimensions.width
+                )}
+              >
+                {/* join Meeting */}
+                <Button
+                  iconPosition={'left'}
+                  style={StyleSheet.applyWidth(
+                    {
+                      backgroundColor: palettes.Brand.Community_Primary_Alt,
+                      borderRadius: 24,
+                      fontFamily: 'Poppins_500Medium',
+                      fontSize: 17,
+                      height: 48,
+                      marginBottom: 25,
+                      marginLeft: 40,
+                      marginRight: 40,
+                      marginTop: 25,
+                      textAlign: 'center',
+                    },
+                    dimensions.width
+                  )}
+                  title={'Join Meeting\n'}
+                />
+                {/* Start Meeting */}
+                <Button
+                  iconPosition={'left'}
+                  onPress={() => {
+                    try {
+                      navigation.goBack();
+                    } catch (err) {
+                      console.error(err);
+                    }
+                  }}
+                  style={StyleSheet.applyWidth(
+                    {
+                      backgroundColor: palettes.App['Custom Color_4'],
+                      borderBottomWidth: 1,
+                      borderColor: palettes.Brand.Community_Primary_Alt,
+                      borderLeftWidth: 1,
+                      borderRadius: 24,
+                      borderRightWidth: 1,
+                      borderTopWidth: 1,
+                      color: palettes.Brand.Community_Primary_Alt,
+                      fontFamily: 'Poppins_500Medium',
+                      fontSize: 17,
+                      height: 48,
+                      marginBottom: 25,
+                      marginLeft: 40,
+                      marginRight: 40,
+                      textAlign: 'center',
+                    },
+                    dimensions.width
+                  )}
+                  title={'Start Meeting'}
+                />
               </View>
             </Modal>
           </Touchable>
@@ -1071,8 +1064,12 @@ const ClientHomePageeScreen = props => {
                       marginLeft: '10%',
                       marginRight: '10%',
                       marginTop: '10%',
-                      maxWidth: { minWidth: Breakpoints.Desktop, value: '2%' },
+                      maxWidth: [
+                        { minWidth: Breakpoints.Desktop, value: '2%' },
+                        { minWidth: Breakpoints.Laptop, value: '0%' },
+                      ],
                       minHeight: null,
+                      minWidth: { minWidth: Breakpoints.Laptop, value: '0%' },
                       paddingBottom: '10%',
                       paddingLeft: '10%',
                       paddingRight: '10%',
@@ -1086,6 +1083,7 @@ const ClientHomePageeScreen = props => {
                       width: [
                         { minWidth: Breakpoints.Mobile, value: '30%' },
                         { minWidth: Breakpoints.Tablet, value: '8%' },
+                        { minWidth: Breakpoints.Laptop, value: '5%' },
                       ],
                     }
                   ),

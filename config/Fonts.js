@@ -22,6 +22,7 @@ export default {
   OpenSans_700Bold: require('../assets/fonts/OpenSans_700Bold.ttf'),
   Poppins_400Regular: require('../assets/fonts/Poppins_400Regular.ttf'),
   Poppins_500Medium: require('../assets/fonts/Poppins_500Medium.ttf'),
+  Poppins_700Bold: require('../assets/fonts/Poppins_700Bold.ttf'),
   Rubik_400Regular: require('../assets/fonts/Rubik_400Regular.ttf'),
   Rubik_700Bold: require('../assets/fonts/Rubik_700Bold.ttf'),
 };

@@ -11,6 +11,7 @@ import LinkingConfiguration from './LinkingConfiguration';
 import AccountEditScreen from './screens/AccountEditScreen';
 import AccountEditedScreen from './screens/AccountEditedScreen';
 import AvailabilityScreen from './screens/AvailabilityScreen';
+import CallWaitingScreen from './screens/CallWaitingScreen';
 import ClientHomePageTestingScreen from './screens/ClientHomePageTestingScreen';
 import ClientHomePageeScreen from './screens/ClientHomePageeScreen';
 import ClientSignInScreen from './screens/ClientSignInScreen';
@@ -23,7 +24,6 @@ import ProfessionalSignInScreen from './screens/ProfessionalSignInScreen';
 import ProfessionalSignUpScreen from './screens/ProfessionalSignUpScreen';
 import ProfprofileScreen from './screens/ProfprofileScreen';
 import StartUpPageScreen from './screens/StartUpPageScreen';
-import VideoCallScreen from './screens/VideoCallScreen';
 import palettes from './themes/palettes';
 import Breakpoints from './utils/Breakpoints';
 import useWindowDimensions from './utils/useWindowDimensions';
@@ -180,14 +180,6 @@ export default function RootAppNavigator() {
           })}
         />
         <Stack.Screen
-          name="VideoCallScreen"
-          component={VideoCallScreen}
-          options={({ navigation }) => ({
-            headerShown: false,
-            title: 'Video Call',
-          })}
-        />
-        <Stack.Screen
           name="ProfessionalGadgetScreen"
           component={ProfessionalGadgetScreen}
           options={({ navigation }) => ({
@@ -209,6 +201,13 @@ export default function RootAppNavigator() {
           options={({ navigation }) => ({
             headerShown: false,
             title: 'Account_Edited',
+          })}
+        />
+        <Stack.Screen
+          name="CallWaitingScreen"
+          component={CallWaitingScreen}
+          options={({ navigation }) => ({
+            title: 'call waiting',
           })}
         />
       </Stack.Navigator>
