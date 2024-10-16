@@ -333,7 +333,11 @@ const ClientHomePageeScreen = props => {
             alignItems: 'center',
             flexDirection: 'row',
             justifyContent: 'space-between',
-            marginRight: { minWidth: Breakpoints.Laptop, value: '5%' },
+            marginLeft: 5,
+            marginRight: [
+              { minWidth: Breakpoints.Laptop, value: '5%' },
+              { minWidth: Breakpoints.Mobile, value: 5 },
+            ],
             marginTop: 8,
             paddingBottom: 8,
             paddingLeft: 16,
@@ -350,15 +354,7 @@ const ClientHomePageeScreen = props => {
               alignItems: 'flex-start',
               bottom: '10%',
               justifyContent: 'center',
-              marginLeft: [
-                { minWidth: Breakpoints.Tablet, value: '5%' },
-                { minWidth: Breakpoints.Mobile, value: '13%' },
-                { minWidth: Breakpoints.Desktop, value: 1 },
-              ],
-              right: [
-                { minWidth: Breakpoints.Mobile, value: '18%' },
-                { minWidth: Breakpoints.Tablet, value: '33%' },
-              ],
+              marginLeft: { minWidth: Breakpoints.Desktop, value: 1 },
             },
             dimensions.width
           )}
@@ -559,7 +555,7 @@ const ClientHomePageeScreen = props => {
                     </Circle>
                   </View>
                 </View>
-                {/* waiting for host */}
+                {/* join meeting */}
                 <Text
                   accessible={true}
                   selectable={false}
@@ -574,7 +570,7 @@ const ClientHomePageeScreen = props => {
                     dimensions.width
                   )}
                 >
-                  {'Waiting for host\n'}
+                  {'Join Meeting'}
                 </Text>
 
                 <Text
@@ -602,6 +598,7 @@ const ClientHomePageeScreen = props => {
                       minWidth: Breakpoints.Tablet,
                       value: 'center',
                     },
+                    flexDirection: 'row',
                     justifyContent: {
                       minWidth: Breakpoints.Tablet,
                       value: 'center',
@@ -629,7 +626,7 @@ const ClientHomePageeScreen = props => {
                     },
                     dimensions.width
                   )}
-                  title={'Join Meeting\n'}
+                  title={'Meeting With Jason\n'}
                 />
                 {/* Start Meeting */}
                 <Button
@@ -654,14 +651,83 @@ const ClientHomePageeScreen = props => {
                       fontFamily: 'Poppins_500Medium',
                       fontSize: 17,
                       height: 48,
+                      textAlign: 'center',
+                      top: '25%',
+                      width: '20%',
+                    },
+                    dimensions.width
+                  )}
+                  title={'Start'}
+                />
+              </View>
+              {/* Clicks 2 */}
+              <View
+                style={StyleSheet.applyWidth(
+                  {
+                    alignSelf: {
+                      minWidth: Breakpoints.Tablet,
+                      value: 'center',
+                    },
+                    flexDirection: 'row',
+                    justifyContent: {
+                      minWidth: Breakpoints.Tablet,
+                      value: 'center',
+                    },
+                    width: { minWidth: Breakpoints.Tablet, value: '50%' },
+                  },
+                  dimensions.width
+                )}
+              >
+                {/* join Meeting */}
+                <Button
+                  iconPosition={'left'}
+                  style={StyleSheet.applyWidth(
+                    {
+                      backgroundColor: palettes.Brand.Community_Primary_Alt,
+                      borderRadius: 24,
+                      fontFamily: 'Poppins_500Medium',
+                      fontSize: 17,
+                      height: 48,
                       marginBottom: 25,
                       marginLeft: 40,
                       marginRight: 40,
+                      marginTop: 25,
                       textAlign: 'center',
                     },
                     dimensions.width
                   )}
-                  title={'Start Meeting'}
+                  title={'Meeting With Sarra\n'}
+                />
+                {/* Start Meeting */}
+                <Button
+                  iconPosition={'left'}
+                  onPress={() => {
+                    try {
+                      navigation.goBack();
+                    } catch (err) {
+                      console.error(err);
+                    }
+                  }}
+                  style={StyleSheet.applyWidth(
+                    {
+                      backgroundColor: palettes.App['Custom Color_4'],
+                      borderBottomWidth: 1,
+                      borderColor: palettes.Brand.Community_Primary_Alt,
+                      borderLeftWidth: 1,
+                      borderRadius: 24,
+                      borderRightWidth: 1,
+                      borderTopWidth: 1,
+                      color: palettes.Brand.Community_Primary_Alt,
+                      fontFamily: 'Poppins_500Medium',
+                      fontSize: 17,
+                      height: 48,
+                      textAlign: 'center',
+                      top: '25%',
+                      width: '20%',
+                    },
+                    dimensions.width
+                  )}
+                  title={'Start\n'}
                 />
               </View>
             </Modal>
@@ -1055,15 +1121,17 @@ const ClientHomePageeScreen = props => {
                         { minWidth: Breakpoints.Tablet, value: '35%' },
                         { minWidth: Breakpoints.Laptop, value: '30%' },
                       ],
-                      left: [
-                        { minWidth: Breakpoints.Mobile, value: '55%' },
-                        { minWidth: Breakpoints.Tablet, value: '68%' },
-                        { minWidth: Breakpoints.Laptop, value: '68%' },
+                      marginLeft: [
+                        { minWidth: Breakpoints.Mobile, value: '70%' },
+                        { minWidth: Breakpoints.Tablet, value: '78%' },
                       ],
-                      marginBottom: '10%',
-                      marginLeft: '10%',
-                      marginRight: '10%',
-                      marginTop: '10%',
+                      marginTop: [
+                        { minWidth: Breakpoints.Mobile, value: '25%' },
+                        { minWidth: Breakpoints.Tablet, value: '13%' },
+                        { minWidth: Breakpoints.Laptop, value: '11%' },
+                        { minWidth: Breakpoints.Desktop, value: '8%' },
+                        { minWidth: Breakpoints.BigScreen, value: '6%' },
+                      ],
                       maxWidth: [
                         { minWidth: Breakpoints.Desktop, value: '2%' },
                         { minWidth: Breakpoints.Laptop, value: '0%' },
@@ -1074,12 +1142,6 @@ const ClientHomePageeScreen = props => {
                       paddingLeft: '10%',
                       paddingRight: '10%',
                       paddingTop: '10%',
-                      top: [
-                        { minWidth: Breakpoints.Mobile, value: '12%' },
-                        { minWidth: Breakpoints.Tablet, value: '9%' },
-                        { minWidth: Breakpoints.Laptop, value: '7%' },
-                        { minWidth: Breakpoints.Desktop, value: 2 },
-                      ],
                       width: [
                         { minWidth: Breakpoints.Mobile, value: '30%' },
                         { minWidth: Breakpoints.Tablet, value: '8%' },

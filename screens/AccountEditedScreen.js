@@ -6,6 +6,7 @@ import {
   DatePicker,
   Icon,
   IconButton,
+  NumberInput,
   ScreenContainer,
   SimpleStyleKeyboardAwareScrollView,
   SimpleStyleMasonryFlashList,
@@ -44,6 +45,7 @@ const AccountEditedScreen = props => {
   const [datePickerValue, setDatePickerValue] = React.useState(new Date());
   const [dobPicker, setDobPicker] = React.useState(new Date());
   const [number, setNumber] = React.useState('');
+  const [numberInputValue, setNumberInputValue] = React.useState('');
   const [textInputValue, setTextInputValue] = React.useState('');
   const supabaseUpdateClientDataPATCH = SupabaseApi.useUpdateClientDataPATCH();
   const supabaseUpdateClientNumPATCH = SupabaseApi.useUpdateClientNumPATCH();
@@ -671,7 +673,7 @@ const AccountEditedScreen = props => {
             >
               {Constants['UserLoginRecord'] &&
                 Constants['UserLoginRecord'][0]['password']}
-              {'\n\n'}
+              {'\n'}
             </Text>
           </View>
           <Spacer bottom={18} left={18} right={18} top={18} />
@@ -856,69 +858,23 @@ const AccountEditedScreen = props => {
             >
               {'Phone Number\n'}
             </Text>
-            <TextInput
-              autoCapitalize={'none'}
-              autoCorrect={true}
+            <NumberInput
               changeTextDelay={500}
-              onChangeText={newTextInputValue => {
-                console.log('Text Input ON_CHANGE_TEXT Start');
-                let error = null;
+              onChangeText={newNumberInputValue => {
                 try {
-                  console.log('Start ON_CHANGE_TEXT:0 FETCH_REQUEST');
-                  /* hidden 'API Request' action */ console.log(
-                    'Complete ON_CHANGE_TEXT:0 FETCH_REQUEST'
-                  );
-                } catch (err) {
-                  console.error(err);
-                  error = err.message ?? err;
-                }
-                console.log(
-                  'Text Input ON_CHANGE_TEXT Complete',
-                  error ? { error } : 'no error'
-                );
-              }}
-              onFocus={() => {
-                try {
-                  /* hidden 'API Request' action */
-                } catch (err) {
-                  console.error(err);
-                }
-              }}
-              onSubmitEditing={() => {
-                try {
-                  /* hidden 'API Request' action */
+                  setClientPhoneNumber(newNumberInputValue);
                 } catch (err) {
                   console.error(err);
                 }
               }}
               webShowOutline={true}
-              defaultValue={clientPhoneNumber}
-              editable={true}
+              {...GlobalStyles.NumberInputStyles(theme)['Number Input'].props}
               placeholder={'Phone'}
-              placeholderTextColor={theme.colors.text.strong}
               style={StyleSheet.applyWidth(
-                {
-                  borderBottomWidth: 0.5,
-                  borderColor: palettes.App['Custom Color_4'],
-                  borderLeftWidth: 0.5,
-                  borderRadius: 8,
-                  borderRightWidth: 0.5,
-                  borderTopWidth: 0.5,
-                  color: theme.colors.text.strong,
-                  fontFamily: 'Inter_400Regular',
-                  fontSize: [
-                    { minWidth: Breakpoints.Mobile, value: 16 },
-                    { minWidth: Breakpoints.Tablet, value: 20 },
-                  ],
-                  height: 52,
-                  marginTop: 10,
-                  paddingBottom: 8,
-                  paddingLeft: 16,
-                  paddingRight: 8,
-                  paddingTop: 8,
-                },
+                GlobalStyles.NumberInputStyles(theme)['Number Input'].style,
                 dimensions.width
               )}
+              value={clientPhoneNumber}
             />
           </View>
           {/* Address */}
@@ -954,14 +910,7 @@ const AccountEditedScreen = props => {
               numberOfLines={4}
               onChangeText={newTextAreaValue => {
                 try {
-                  /* hidden 'API Request' action */
-                } catch (err) {
-                  console.error(err);
-                }
-              }}
-              onFocus={() => {
-                try {
-                  /* hidden 'API Request' action */
+                  undefined;
                 } catch (err) {
                   console.error(err);
                 }
@@ -1001,40 +950,34 @@ const AccountEditedScreen = props => {
         <Button
           iconPosition={'left'}
           onPress={() => {
-            console.log('Save Changes ON_PRESS Start');
-            let error = null;
-            try {
-              console.log('Start ON_PRESS:0 SET_VARIABLE');
-              /* hidden 'Set Variable' action */ console.log(
-                'Complete ON_PRESS:0 SET_VARIABLE'
+            const handler = async () => {
+              console.log('Save Changes ON_PRESS Start');
+              let error = null;
+              try {
+                console.log('Start ON_PRESS:0 FETCH_REQUEST');
+                const getTheClient = (
+                  await supabaseUpdateClientDataPATCH.mutateAsync({
+                    clientAddress: clientAddress,
+                    clientPhoneNumber: clientPhoneNumber,
+                    id: 1,
+                  })
+                )?.json;
+                console.log('Complete ON_PRESS:0 FETCH_REQUEST', {
+                  getTheClient,
+                });
+                console.log('Start ON_PRESS:1 CONSOLE_LOG');
+                console.log(getTheClient);
+                console.log('Complete ON_PRESS:1 CONSOLE_LOG');
+              } catch (err) {
+                console.error(err);
+                error = err.message ?? err;
+              }
+              console.log(
+                'Save Changes ON_PRESS Complete',
+                error ? { error } : 'no error'
               );
-              console.log('Start ON_PRESS:1 SET_VARIABLE');
-              /* hidden 'Set Variable' action */ console.log(
-                'Complete ON_PRESS:1 SET_VARIABLE'
-              );
-              console.log('Start ON_PRESS:2 FETCH_REQUEST');
-              /* hidden 'API Request' action */ console.log(
-                'Complete ON_PRESS:2 FETCH_REQUEST'
-              );
-              console.log('Start ON_PRESS:3 SET_VARIABLE');
-              /* hidden 'Set Variable' action */ console.log(
-                'Complete ON_PRESS:3 SET_VARIABLE'
-              );
-              console.log('Start ON_PRESS:4 NAVIGATE');
-              /* hidden 'Navigate' action */ console.log(
-                'Complete ON_PRESS:4 NAVIGATE'
-              );
-              console.log('Start ON_PRESS:5 CONSOLE_LOG');
-              console.log(clientPhoneNumber, clientAddress);
-              console.log('Complete ON_PRESS:5 CONSOLE_LOG');
-            } catch (err) {
-              console.error(err);
-              error = err.message ?? err;
-            }
-            console.log(
-              'Save Changes ON_PRESS Complete',
-              error ? { error } : 'no error'
-            );
+            };
+            handler();
           }}
           style={StyleSheet.applyWidth(
             {

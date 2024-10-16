@@ -166,3 +166,15 @@ export const LottieAnimationStyles = theme =>
   StyleSheet.create({
     'Lottie Animation': { style: { height: 100, width: 100 }, props: {} },
   });
+
+export const CircleStyles = theme =>
+  StyleSheet.create({
+    Circle: {
+      style: {
+        alignItems: 'center',
+        backgroundColor: theme.colors.branding.primary,
+        justifyContent: 'center',
+      },
+      props: {},
+    },
+  });

@@ -28,7 +28,6 @@ import {
 } from 'react-native';
 import { Fetch } from 'react-request';
 import * as GlobalStyles from '../GlobalStyles.js';
-import * as ExampleDataForListsApi from '../apis/ExampleDataForListsApi.js';
 import * as SupabaseApi from '../apis/SupabaseApi.js';
 import * as GlobalVariables from '../config/GlobalVariableContext';
 import Images from '../config/Images';
@@ -640,6 +639,7 @@ const ProfprofileScreen = props => {
                                   try {
                                     const uploaded = await selectFileUtil({
                                       returnNameAndValue: false,
+                                      multiple: false,
                                     });
                                     /* 'API Request' action requires configuration: choose an API endpoint */
                                   } catch (err) {
@@ -981,6 +981,7 @@ const ProfprofileScreen = props => {
                                   try {
                                     const uploaded = await selectFileUtil({
                                       returnNameAndValue: false,
+                                      multiple: false,
                                     });
                                     /* 'API Request' action requires configuration: choose an API endpoint */
                                   } catch (err) {

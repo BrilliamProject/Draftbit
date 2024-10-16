@@ -1259,73 +1259,43 @@ const AccountEditScreen = props => {
                 showsVerticalScrollIndicator={true}
                 extraData={fetchData}
               />
+              <SimpleStyleFlatList
+                data={fetchData}
+                horizontal={false}
+                inverted={false}
+                keyExtractor={(listData, index) => listData}
+                keyboardShouldPersistTaps={'never'}
+                listKey={'NVCZY5qu'}
+                nestedScrollEnabled={false}
+                numColumns={1}
+                onEndReachedThreshold={0.5}
+                renderItem={({ item, index }) => {
+                  const listData = item;
+                  return (
+                    <ActionSheet>
+                      <ActionSheetItem
+                        color={theme.colors.text.strong}
+                        label={'Option'}
+                        {...GlobalStyles.ActionSheetItemStyles(theme)[
+                          'Action Sheet Item'
+                        ].props}
+                        style={StyleSheet.applyWidth(
+                          GlobalStyles.ActionSheetItemStyles(theme)[
+                            'Action Sheet Item'
+                          ].style,
+                          dimensions.width
+                        )}
+                      />
+                    </ActionSheet>
+                  );
+                }}
+                showsHorizontalScrollIndicator={true}
+                showsVerticalScrollIndicator={true}
+              />
             </>
           );
         }}
       </SupabaseApi.FetchClientDataOneGET>
-      <ActionSheet visible={Constants['showActionSheet']}>
-        <ActionSheetItem
-          color={theme.colors.text.strong}
-          onPress={() => {
-            console.log('Action Sheet Item ON_PRESS Start');
-            let error = null;
-            try {
-              console.log('Start ON_PRESS:0 SET_VARIABLE');
-              setGlobalVariableValue({
-                key: 'showActionSheet',
-                value: false,
-              });
-              console.log('Complete ON_PRESS:0 SET_VARIABLE');
-              const saved = (() => {
-                console.log('Start ON_PRESS:1 SET_VARIABLE');
-                if (Constants['isEditMode'] !== Constants['isEditMode']) {
-                  const __result = setGlobalVariableValue({
-                    key: 'isEditMode',
-                    value: true,
-                  });
-                  console.log('Complete ON_PRESS:1 SET_VARIABLE', { saved });
-                  return __result;
-                } else {
-                  console.log(
-                    'Skipped ON_PRESS:1 SET_VARIABLE: condition not met'
-                  );
-                }
-              })();
-              console.log('Start ON_PRESS:2 NAVIGATE');
-              if (navigation.canGoBack()) {
-                navigation.popToTop();
-              }
-              navigation.replace('AccountEditedScreen');
-              console.log('Complete ON_PRESS:2 NAVIGATE');
-            } catch (err) {
-              console.error(err);
-              error = err.message ?? err;
-            }
-            console.log(
-              'Action Sheet Item ON_PRESS Complete',
-              error ? { error } : 'no error'
-            );
-          }}
-          {...GlobalStyles.ActionSheetItemStyles(theme)['Action Sheet Item']
-            .props}
-          color={StyleSheet.getWidthValue(
-            [{ minWidth: Breakpoints.Laptop, value: theme.colors.text.strong }],
-            dimensions.width
-          )}
-          label={'Edit Account'}
-          style={StyleSheet.applyWidth(
-            StyleSheet.compose(
-              GlobalStyles.ActionSheetItemStyles(theme)['Action Sheet Item']
-                .style,
-              {
-                marginLeft: { minWidth: Breakpoints.Laptop, value: '20%' },
-                marginRight: { minWidth: Breakpoints.Laptop, value: '20%' },
-              }
-            ),
-            dimensions.width
-          )}
-        />
-      </ActionSheet>
     </ScreenContainer>
   );
 };

@@ -12,7 +12,6 @@ import AccountEditScreen from './screens/AccountEditScreen';
 import AccountEditedScreen from './screens/AccountEditedScreen';
 import AvailabilityScreen from './screens/AvailabilityScreen';
 import CallWaitingScreen from './screens/CallWaitingScreen';
-import ClientHomePageTestingScreen from './screens/ClientHomePageTestingScreen';
 import ClientHomePageeScreen from './screens/ClientHomePageeScreen';
 import ClientSignInScreen from './screens/ClientSignInScreen';
 import ClientToProfessionalPageOrg2Screen from './screens/ClientToProfessionalPageOrg2Screen';
@@ -23,7 +22,9 @@ import ProfessionalMeetingScheduleScreen from './screens/ProfessionalMeetingSche
 import ProfessionalSignInScreen from './screens/ProfessionalSignInScreen';
 import ProfessionalSignUpScreen from './screens/ProfessionalSignUpScreen';
 import ProfprofileScreen from './screens/ProfprofileScreen';
+import ProfprofilepageScreen from './screens/ProfprofilepageScreen';
 import StartUpPageScreen from './screens/StartUpPageScreen';
+import TrackOrderScreen from './screens/TrackOrderScreen';
 import palettes from './themes/palettes';
 import Breakpoints from './utils/Breakpoints';
 import useWindowDimensions from './utils/useWindowDimensions';
@@ -140,14 +141,6 @@ export default function RootAppNavigator() {
           })}
         />
         <Stack.Screen
-          name="ClientHomePageTestingScreen"
-          component={ClientHomePageTestingScreen}
-          options={({ navigation }) => ({
-            headerShown: false,
-            title: 'ClientHomePageTesting',
-          })}
-        />
-        <Stack.Screen
           name="ProfprofileScreen"
           component={ProfprofileScreen}
           options={({ navigation }) => ({
@@ -208,6 +201,20 @@ export default function RootAppNavigator() {
           component={CallWaitingScreen}
           options={({ navigation }) => ({
             title: 'call waiting',
+          })}
+        />
+        <Stack.Screen
+          name="ProfprofilepageScreen"
+          component={ProfprofilepageScreen}
+          options={({ navigation }) => ({
+            title: 'profprofilepage',
+          })}
+        />
+        <Stack.Screen
+          name="TrackOrderScreen"
+          component={TrackOrderScreen}
+          options={({ navigation }) => ({
+            title: 'Track Order',
           })}
         />
       </Stack.Navigator>

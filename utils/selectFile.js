@@ -2,32 +2,37 @@ import { Platform } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import assetToBase64 from './assetToBase64';
 
-const selectFile = async ({ returnNameAndValue = false }) => {
+const selectFile = async ({ returnNameAndValue = false, multiple = false }) => {
   try {
-    const result = await DocumentPicker.getDocumentAsync();
+    const result = await DocumentPicker.getDocumentAsync({
+      multiple,
+    });
 
     if (result.canceled) {
       console.error('Select file canceled');
       return;
     }
 
-    let asset;
-    if (result.name && result.uri) {
-      asset = result;
-    } else {
-      asset = result.assets?.length > 0 ? result.assets[0] : null;
-    }
+    const assets = result.assets;
 
-    if (!asset) {
+    if (!assets || assets.length === 0) {
       console.error('No assets were returned in select file');
       return;
     }
 
-    let value = await assetToBase64(asset);
+    const processAsset = async asset => {
+      const value = await assetToBase64(asset);
+      return returnNameAndValue ? { name: asset.name, value } : value;
+    };
 
-    return returnNameAndValue ? { name: asset.name, value } : value;
+    if (multiple) {
+      const processedAssets = await Promise.all(assets.map(processAsset));
+      return processedAssets;
+    } else {
+      return processAsset(assets[0]);
+    }
   } catch (error) {
-    console.error(error);
+    console.error('Error in selectFile:', error);
   }
 };
 

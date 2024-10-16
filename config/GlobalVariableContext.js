@@ -4,19 +4,18 @@ import * as SplashScreen from 'expo-splash-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const DeviceVariables = {
-  accessToken:
+  accesstoken:
     'eyJhbGciOiJIUzI1NiIsImtpZCI6IkJJdVRMd2FaYU9xOFVmSUIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2lyc3Bjc25rcG5zam5pdHN6dXhnLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyYjcwMTIyZC03ZDQ4LTRjZGYtYmNkYi1hZjE4ZjliNTliMzYiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MTc3MTQ4LCJpYXQiOjE3MjQxNzM1NDgsImVtYWlsIjoic29tZUBnbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsIjoic29tZUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiMmI3MDEyMmQtN2Q0OC00Y2RmLWJjZGItYWYxOGY5YjU5YjM2In0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3MjQxNzM1NDh9XSwic2Vzc2lvbl9pZCI6IjA1Y2JjZTQ4LTgzYWYtNDE2YS04OTE5LTNmMTA0MDlkNGNhYSIsImlzX2Fub255bW91cyI6ZmFsc2V9.6hyXCLOjvX-mA5ZotEfpr_wvmf22p-vr0T3MLCc1AeA',
   accountPage: true,
   isEditMode: true,
   Language: 'some Language',
-  refreshToken: 'fmqaQCJ2cyOYPlF535ps9w',
   setEditMode: true,
   showActionSheet: false,
   __env__: 'Development',
 };
 export const AppVariables = {
   API_KEY_HEADER:
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlyc3Bjc25rcG5zam5pdHN6dXhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjM4MzQ3NjcsImV4cCI6MjAzOTQxMDc2N30.HW6O6WwUOh0A0iu84izo0FP36r0cZOMwVECLIHZEADE',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlyc3Bjc25rcG5zam5pdHN6dXhnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyMzgzNDc2NywiZXhwIjoyMDM5NDEwNzY3fQ.-8nmFD0GKvgTtnXczH2zss7XJ0FDtX2TrSAH8uweSzs',
   AUTH_HEADER: '',
   authId: '',
   AUTHORIZATION_HEADER: '',

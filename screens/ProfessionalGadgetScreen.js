@@ -18,14 +18,7 @@ import {
   withTheme,
 } from '@draftbit/ui';
 import { useIsFocused } from '@react-navigation/native';
-import {
-  ActivityIndicator,
-  Image,
-  ImageBackground,
-  Modal,
-  Text,
-  View,
-} from 'react-native';
+import { ActivityIndicator, Image, Modal, Text, View } from 'react-native';
 import { Fetch } from 'react-request';
 import * as GlobalStyles from '../GlobalStyles.js';
 import * as SupabaseApi from '../apis/SupabaseApi.js';
@@ -3292,54 +3285,6 @@ const ProfessionalGadgetScreen = props => {
                                     </Touchable>
                                   </View>
                                 </View>
-
-                                <SupabaseApi.FetchClientProfileGET>
-                                  {({
-                                    loading,
-                                    error,
-                                    data,
-                                    refetchClientProfile,
-                                  }) => {
-                                    const fetchData = data?.json;
-                                    if (loading) {
-                                      return <ActivityIndicator />;
-                                    }
-
-                                    if (
-                                      error ||
-                                      data?.status < 200 ||
-                                      data?.status >= 300
-                                    ) {
-                                      return <ActivityIndicator />;
-                                    }
-
-                                    return (
-                                      <SimpleStyleFlatList
-                                        data={fetchData}
-                                        horizontal={false}
-                                        inverted={false}
-                                        keyExtractor={(listData, index) =>
-                                          listData
-                                        }
-                                        keyboardShouldPersistTaps={'never'}
-                                        listKey={JSON.stringify(fetchData)}
-                                        nestedScrollEnabled={false}
-                                        numColumns={1}
-                                        onEndReachedThreshold={0.5}
-                                        renderItem={({ item, index }) => {
-                                          const listData = item;
-                                          return null;
-                                        }}
-                                        showsHorizontalScrollIndicator={true}
-                                        showsVerticalScrollIndicator={true}
-                                        style={StyleSheet.applyWidth(
-                                          { flex: 1 },
-                                          dimensions.width
-                                        )}
-                                      />
-                                    );
-                                  }}
-                                </SupabaseApi.FetchClientProfileGET>
                               </View>
                             </View>
                           )}
